@@ -10,7 +10,7 @@ According to [benchmarks](https://github.com/RReverser/acorn-jsx/blob/master/tes
 
 ## Transpiler
 
-Please note that this tool only parses source code to JSX AST, which is useful for various language tools and services. If you want to transpile your code to regular ES5-compliant JavaScript with source map, check out [6to5 transpiler](http://6to5.org/) which used `acorn-jsx` under the hood.
+Please note that this tool only parses source code to JSX AST, which is useful for various language tools and services. If you want to transpile your code to regular ES5-compliant JavaScript with source map, check out the [babel transpiler](https://babeljs.io/) which uses `acorn-jsx` under the hood.
 
 ## Installation
 
