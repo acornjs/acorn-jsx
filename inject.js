@@ -61,23 +61,31 @@ module.exports = function(acorn) {
       default:
         if (acorn.isNewLine(ch)) {
           out += this.input.slice(chunkStart, this.pos);
-          ++this.pos;
-          if (ch === 13 && this.input.charCodeAt(this.pos) === 10) {
-            ++this.pos;
-            out += '\n';
-          } else {
-            out += String.fromCharCode(ch);
-          }
-          if (this.options.locations) {
-            ++this.curLine;
-            this.lineStart = this.pos;
-          }
+          out += this.jsx_readNewLine(true);
           chunkStart = this.pos;
         } else {
           ++this.pos;
         }
       }
     }
+  };
+
+  pp.jsx_readNewLine = function(normalizeCRLF) {
+    var ch = this.input.charCodeAt(this.pos);
+    var out;
+    ++this.pos;
+    if (ch === 13 && this.input.charCodeAt(this.pos) === 10) {
+      ++this.pos;
+      out = normalizeCRLF ? '\n' : '\r\n';
+    } else {
+      out = String.fromCharCode(ch);
+    }
+    if (this.options.locations) {
+      ++this.curLine;
+      this.lineStart = this.pos;
+    }
+
+    return out;
   };
 
   pp.jsx_readString = function(quote) {
@@ -90,6 +98,10 @@ module.exports = function(acorn) {
       if (ch === 38) { // '&'
         out += this.input.slice(chunkStart, this.pos);
         out += this.jsx_readEntity();
+        chunkStart = this.pos;
+      } else if (acorn.isNewLine(ch)) {
+        out += this.input.slice(chunkStart, this.pos);
+        out += this.jsx_readNewLine(false);
         chunkStart = this.pos;
       } else {
         ++this.pos;
