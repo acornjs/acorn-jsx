@@ -3607,6 +3607,10 @@ var fbTestFixture = {
               },
               value: {
                 type: "Literal",
+                loc: {
+                  start: { line: 1, column: 8 },
+                  end: { line: 3, column: 15 }
+                },
                 range: [8, 62],
                 value: "M230 80\n\t\tA 45 45, 0, 1, 0, 275 125 \r\n    L 275 80 Z",
                 raw: "\"M230 80\n\t\tA 45 45, 0, 1, 0, 275 125 \r\n    L 275 80 Z\""
