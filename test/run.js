@@ -1,5 +1,4 @@
 var driver = require("./driver.js");
-require("..");
 require("./tests-jsx.js");
 
 function group(name) {
@@ -21,7 +20,7 @@ function log(title, message) {
 var stats, modes = {
   Normal: {
     config: {
-      parse: require("acorn").parse
+      parse: require("..").parse
     }
   }
 };
