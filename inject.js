@@ -602,6 +602,9 @@ module.exports = function(acorn) {
     node.openingElement = openingElement;
     node.closingElement = closingElement;
     node.children = children;
+    if (this.type === tt.relational && this.value === "<") {
+      this.raise(this.pos, "Adjacent JSX elements must be wrapped in an enclosing tag");
+    }
     return this.finishNode(node, 'JSXElement');
   };
 
