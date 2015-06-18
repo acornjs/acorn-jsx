@@ -3636,7 +3636,7 @@ if (typeof exports !== "undefined") {
   var testFail = require("./driver.js").testFail;
 }
 
-testFail("var x = <div>one</div><div>two</div>;", "Adjacent JSX elements must be wrapped in an enclosing tag (1:23)");
+testFail("var x = <div>one</div><div>two</div>;", "Adjacent JSX elements must be wrapped in an enclosing tag (1:22)");
 
 for (var ns in fbTestFixture) {
   ns = fbTestFixture[ns];

@@ -3,7 +3,7 @@
   "description": "Alternative, faster React.js JSX parser",
   "homepage": "https://github.com/RReverser/acorn-jsx",
   "main": "acorn.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "maintainers": [
     {
       "name": "Ingvar Stepanyan",
