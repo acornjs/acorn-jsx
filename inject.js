@@ -196,10 +196,10 @@ module.exports = function(acorn) {
   // Parse namespaced identifier.
 
   pp.jsx_parseNamespacedName = function() {
-    var start = this.markPosition();
+    var startPos = this.start, startLoc = this.startLoc;
     var name = this.jsx_parseIdentifier();
     if (!this.eat(tt.colon)) return name;
-    var node = this.startNodeAt(start);
+    var node = this.startNodeAt(startPos, startLoc);
     node.namespace = name;
     node.name = this.jsx_parseIdentifier();
     return this.finishNode(node, 'JSXNamespacedName');
@@ -209,10 +209,10 @@ module.exports = function(acorn) {
   // or single identifier.
 
   pp.jsx_parseElementName = function() {
-    var start = this.markPosition();
+    var startPos = this.start, startLoc = this.startLoc;
     var node = this.jsx_parseNamespacedName();
     while (this.eat(tt.dot)) {
-      var newNode = this.startNodeAt(start);
+      var newNode = this.startNodeAt(startPos, startLoc);
       newNode.object = node;
       newNode.property = this.jsx_parseIdentifier();
       node = this.finishNode(newNode, 'JSXMemberExpression');
@@ -285,8 +285,8 @@ module.exports = function(acorn) {
 
   // Parses JSX opening tag starting after '<'.
 
-  pp.jsx_parseOpeningElementAt = function(start) {
-    var node = this.startNodeAt(start);
+  pp.jsx_parseOpeningElementAt = function(startPos, startLoc) {
+    var node = this.startNodeAt(startPos, startLoc);
     node.attributes = [];
     node.name = this.jsx_parseElementName();
     while (this.type !== tt.slash && this.type !== tt.jsxTagEnd)
@@ -298,8 +298,8 @@ module.exports = function(acorn) {
 
   // Parses JSX closing tag starting after '</'.
 
-  pp.jsx_parseClosingElementAt = function(start) {
-    var node = this.startNodeAt(start);
+  pp.jsx_parseClosingElementAt = function(startPos, startLoc) {
+    var node = this.startNodeAt(startPos, startLoc);
     node.name = this.jsx_parseElementName();
     this.expect(tt.jsxTagEnd);
     return this.finishNode(node, 'JSXClosingElement');
@@ -308,23 +308,23 @@ module.exports = function(acorn) {
   // Parses entire JSX element, including it's opening tag
   // (starting after '<'), attributes, contents and closing tag.
 
-  pp.jsx_parseElementAt = function(start) {
-    var node = this.startNodeAt(start);
+  pp.jsx_parseElementAt = function(startPos, startLoc) {
+    var node = this.startNodeAt(startPos, startLoc);
     var children = [];
-    var openingElement = this.jsx_parseOpeningElementAt(start);
+    var openingElement = this.jsx_parseOpeningElementAt(startPos, startLoc);
     var closingElement = null;
 
     if (!openingElement.selfClosing) {
       contents: for (;;) {
         switch (this.type) {
         case tt.jsxTagStart:
-          start = this.markPosition();
+          startPos = this.start; startLoc = this.startLoc;
           this.next();
           if (this.eat(tt.slash)) {
-            closingElement = this.jsx_parseClosingElementAt(start);
+            closingElement = this.jsx_parseClosingElementAt(startPos, startLoc);
             break contents;
           }
-          children.push(this.jsx_parseElementAt(start));
+          children.push(this.jsx_parseElementAt(startPos, startLoc));
           break;
 
         case tt.jsxText:
@@ -339,10 +339,11 @@ module.exports = function(acorn) {
           this.unexpected();
         }
       }
-      if (getQualifiedJSXName(closingElement.name) !== getQualifiedJSXName(openingElement.name))
+      if (getQualifiedJSXName(closingElement.name) !== getQualifiedJSXName(openingElement.name)) {
         this.raise(
           closingElement.start,
           'Expected corresponding JSX closing tag for <' + getQualifiedJSXName(openingElement.name) + '>');
+      }
     }
 
     node.openingElement = openingElement;
@@ -357,9 +358,9 @@ module.exports = function(acorn) {
   // Parses entire JSX element from current position.
 
   pp.jsx_parseElement = function() {
-    var start = this.markPosition();
+    var startPos = this.start, startLoc = this.startLoc;
     this.next();
-    return this.jsx_parseElementAt(start);
+    return this.jsx_parseElementAt(startPos, startLoc);
   };
 
   acorn.plugins.jsx = function(instance) {
