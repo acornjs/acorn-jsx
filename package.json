@@ -2,7 +2,6 @@
   "name": "acorn-jsx",
   "description": "Alternative, faster React.js JSX parser",
   "homepage": "https://github.com/RReverser/acorn-jsx",
-  "main": "acorn.js",
   "version": "2.0.0",
   "maintainers": [
     {
