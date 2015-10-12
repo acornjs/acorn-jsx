@@ -244,15 +244,8 @@ module.exports = function(acorn) {
   // at the beginning of the next one (right brace).
 
   pp.jsx_parseEmptyExpression = function() {
-    var tmp = this.start;
-    this.start = this.lastTokEnd;
-    this.lastTokEnd = tmp;
-
-    tmp = this.startLoc;
-    this.startLoc = this.lastTokEndLoc;
-    this.lastTokEndLoc = tmp;
-
-    return this.finishNode(this.startNode(), 'JSXEmptyExpression');
+    var node = this.startNodeAt(this.lastTokEnd, this.lastTokEndLoc);
+    return this.finishNodeAt(node, 'JSXEmptyExpression', this.start, this.startLoc);
   };
 
   // Parses JSX expression enclosed into curly brackets.

@@ -3634,9 +3634,75 @@ var fbTestFixture = {
 if (typeof exports !== "undefined") {
   var test = require("./driver.js").test;
   var testFail = require("./driver.js").testFail;
+  var tokTypes = require("../").tokTypes;
 }
 
 testFail("var x = <div>one</div><div>two</div>;", "Adjacent JSX elements must be wrapped in an enclosing tag (1:22)");
+
+test('<a>{/* foo */}</a>', {}, {
+  onToken: [
+    {
+      type: tokTypes.jsxTagStart,
+      value: undefined,
+      start: 0,
+      end: 1
+    },
+    {
+      type: tokTypes.jsxName,
+      value: 'a',
+      start: 1,
+      end: 2
+    },
+    {
+      type: tokTypes.jsxTagEnd,
+      value: undefined,
+      start: 2,
+      end: 3
+    },
+    {
+      type: tokTypes.braceL,
+      value: undefined,
+      start: 3,
+      end: 4
+    },
+    {
+      type: tokTypes.braceR,
+      value: undefined,
+      start: 13,
+      end: 14
+    },
+    {
+      type: tokTypes.jsxTagStart,
+      value: undefined,
+      start: 14,
+      end: 15
+    },
+    {
+      type: tokTypes.slash,
+      value: '/',
+      start: 15,
+      end: 16
+    },
+    {
+      type: tokTypes.jsxName,
+      value: 'a',
+      start: 16,
+      end: 17
+    },
+    {
+      type: tokTypes.jsxTagEnd,
+      value: undefined,
+      start: 17,
+      end: 18
+    },
+    {
+      type: tokTypes.eof,
+      value: undefined,
+      start: 18,
+      end: 18
+    }
+  ]
+});
 
 for (var ns in fbTestFixture) {
   ns = fbTestFixture[ns];
