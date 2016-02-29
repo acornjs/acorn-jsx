@@ -24,7 +24,7 @@
     "test": "node test/run.js"
   },
   "dependencies": {
-    "acorn": "^2.0.1"
+    "acorn": "^3.0.4"
   },
   "devDependencies": {
     "chai": "^3.0.0",
