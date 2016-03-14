@@ -3639,6 +3639,69 @@ if (typeof exports !== "undefined") {
 
 testFail("var x = <div>one</div><div>two</div>;", "Adjacent JSX elements must be wrapped in an enclosing tag (1:22)");
 
+testFail("<a:b.c />", "Unexpected token (1:4)");
+
+test("<a:b.c />", {
+  type: "Program",
+  range: [0, 9],
+  body: [{
+    type: "ExpressionStatement",
+    range: [0, 9],
+    expression: {
+      type: "JSXElement",
+      range: [0, 9],
+      openingElement: {
+        type: "JSXOpeningElement",
+        range: [0, 9],
+        attributes: [],
+        name: {
+          type: "JSXMemberExpression",
+          range: [1, 6],
+          object: {
+            type: "JSXNamespacedName",
+            range: [1, 4],
+            namespace: {
+              type: "JSXIdentifier",
+              range: [1, 2],
+              name: "a"
+            },
+            name: {
+              type: "JSXIdentifier",
+              range: [3, 4],
+              name: "b"
+            }
+          },
+          property: {
+            type: "JSXIdentifier",
+            range: [5, 6],
+            name: "c"
+          }
+        },
+        selfClosing: true
+      },
+      closingElement: null,
+      children: []
+    }
+  }]
+}, {
+  ranges: true,
+  plugins: {
+    jsx: { allowNamespacedObjects: true }
+  }
+});
+
+testFail('<ns:div />', 'Unexpected token (1:3)', {
+  plugins: {
+    jsx: { allowNamespaces: false }
+  }
+});
+
+testFail('<div ns:attr />', 'Unexpected token (1:7)', {
+  plugins: {
+    jsx: { allowNamespaces: false }
+  }
+});
+
 test('<a>{/* foo */}</a>', {}, {
   onToken: [
     {

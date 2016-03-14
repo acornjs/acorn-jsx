@@ -25,7 +25,7 @@ exports.runTests = function(config, callback) {
       if (expected.onToken = testOpts.onToken) {
         testOpts.onToken = [];
       }
-      testOpts.plugins = { jsx: true };
+      testOpts.plugins = testOpts.plugins || { jsx: true };
       var ast = parse(test.code, testOpts);
       if (test.error) {
         if (config.loose) {
