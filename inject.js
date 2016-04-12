@@ -5,7 +5,12 @@ var XHTMLEntities = require('./xhtml');
 var hexNumber = /^[\da-fA-F]+$/;
 var decimalNumber = /^\d+$/;
 
-module.exports = function(acorn) {
+module.exports = function(acorn, injectable) {
+  if (!injectable) {
+    injectable = acorn;
+    acorn = require('acorn');
+  }
+
   var tt = acorn.tokTypes;
   var tc = acorn.tokContexts;
 
@@ -376,7 +381,7 @@ module.exports = function(acorn) {
     return this.jsx_parseElementAt(startPos, startLoc);
   };
 
-  acorn.plugins.jsx = function(instance, opts) {
+  var toInject = function(instance, opts) {
     if (!opts) {
       return;
     }
@@ -446,5 +451,17 @@ module.exports = function(acorn) {
     });
   };
 
-  return acorn;
+  ['pluginsLoose', 'plugins'].forEach(function(key) {
+    if (injectable[key] && !injectable[key].jsx) {
+      injectable[key].jsx = toInject;
+      return;
+    }
+
+    if (acorn[key] && !acorn[key].jsx) {
+      acorn[key].jsx = toInject;
+      return;
+    }
+  });
+
+  return injectable;
 };
