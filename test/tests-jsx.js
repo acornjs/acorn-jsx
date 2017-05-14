@@ -214,7 +214,7 @@ var fbTestFixture = {
           }
         },
         children: [{
-          type: 'Literal',
+          type: 'JSXText',
           value: ' ',
           raw: ' ',
           range: [15, 16],
@@ -239,7 +239,7 @@ var fbTestFixture = {
             end: { line: 1, column: 23 }
           }
         }, {
-          type: 'Literal',
+          type: 'JSXText',
           value: ' ',
           raw: ' ',
           range: [23, 24],
@@ -735,7 +735,7 @@ var fbTestFixture = {
         },
         children: [
           {
-            type: "Literal",
+            type: "JSXText",
             value: "\nbar\nbaz\n",
             raw: "\nbar\nbaz\n",
             range: [
@@ -1238,7 +1238,7 @@ var fbTestFixture = {
           }
         },
         children: [{
-          type: 'Literal',
+          type: 'JSXText',
           value: '@test content',
           raw: '@test content',
           range: [5, 18],
@@ -1392,7 +1392,7 @@ var fbTestFixture = {
             }
           }
         }, {
-          type: 'Literal',
+          type: 'JSXText',
           value: '7x invalid-js-identifier',
           raw: '7x invalid-js-identifier',
           range: [
@@ -1654,7 +1654,7 @@ var fbTestFixture = {
                 },
                 "children": [
                   {
-                    "type": "Literal",
+                    "type": "JSXText",
                     "value": "monkeys /> gorillas",
                     "raw": "monkeys /> gorillas",
                     "range": [
@@ -3200,7 +3200,7 @@ var fbTestFixture = {
         },
         children: [
           {
-            type: "Literal",
+            type: "JSXText",
             start: 3,
             end: 7,
             value: "foo ",
@@ -3252,7 +3252,7 @@ var fbTestFixture = {
               }
             },
             children: [{
-              type: "Literal",
+              type: "JSXText",
               start: 22,
               end: 26,
               value: " bar",
@@ -3260,7 +3260,7 @@ var fbTestFixture = {
             }]
           },
           {
-            type: "Literal",
+            type: "JSXText",
             start: 30,
             end: 34,
             value: " baz",
@@ -3441,7 +3441,7 @@ var fbTestFixture = {
           }
         },
         children: [{
-          type: "Literal",
+          type: "JSXText",
           start: 5,
           end: 10,
           value: "/text",

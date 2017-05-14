@@ -351,6 +351,15 @@ module.exports = function(acorn) {
     return this.finishNode(node, 'JSXElement');
   };
 
+  // Parse JSX text
+
+  pp.jsx_parseText = function(value) {
+    var node = this.parseLiteral(value);
+    node.type = "JSXText";
+
+    return node;
+  };
+
   // Parses entire JSX element from current position.
 
   pp.jsx_parseElement = function() {
@@ -376,7 +385,7 @@ module.exports = function(acorn) {
     instance.extend('parseExprAtom', function(inner) {
       return function(refShortHandDefaultPos) {
         if (this.type === tt.jsxText)
-          return this.parseLiteral(this.value);
+          return this.jsx_parseText(this.value);
         else if (this.type === tt.jsxTagStart)
           return this.jsx_parseElement();
         else
