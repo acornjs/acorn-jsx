@@ -411,7 +411,7 @@ module.exports = function(acorn) {
             return this.jsx_readString(code);
         }
 
-        if (code === 60 && this.exprAllowed) {
+        if (code === 60 && this.exprAllowed && this.input.charCodeAt(this.pos + 1) !== 33) {
           ++this.pos;
           return this.finishToken(tt.jsxTagStart);
         }

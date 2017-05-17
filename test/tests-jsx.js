@@ -3787,6 +3787,16 @@ test('<a>{/* foo */}</a>', {}, {
   ]
 });
 
+test('<!--a', {
+  type: 'Program',
+  body: []
+}, {
+  onComment: [{
+    type: 'Line',
+    value: 'a'
+  }]
+});
+
 for (var ns in fbTestFixture) {
   ns = fbTestFixture[ns];
   for (var code in ns) {
