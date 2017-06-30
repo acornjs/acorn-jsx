@@ -436,6 +436,24 @@ module.exports = function(acorn) {
         }
       };
     });
+    
+    instance.extend("parseClassMethod", function (inner) {
+      return function (classBody, method, isGenerator, isAsync) {
+        if (method.static && this.eat(tt.eq)) {
+          method.kind = "init";
+          method.value = this.parseMaybeAssign(true);
+          classBody.body.push(this.finishNode(method, "ClassProperty"));
+          this.semicolon();
+          return;
+      } else if(!method.static && this.eat(tt.eq)) {
+          method.value = this.parseParenAndDistinguishExpression(true);
+          classBody.body.push(this.finishNode(method, "MethodDefinition"));
+          this.semicolon();
+          return;
+      }
+        return inner.call(this, classBody, method, isGenerator, isAsync);
+      };
+    });
   };
 
   return acorn;
