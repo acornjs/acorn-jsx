@@ -3183,6 +3183,160 @@ var fbTestFixture = {
           }
         ]
       }
+    },
+
+    '<><div></div></>': {
+      type: 'ExpressionStatement',
+      start: 0,
+      end: 16,
+      loc: {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 16
+        }
+      },
+      range: [0, 16],
+      expression: {
+        type: 'JSXFragment',
+        start: 0,
+        end: 16,
+        loc: {
+          start: {
+            line: 1,
+            column: 0
+          },
+          end: {
+            line: 1,
+            column: 16
+          }
+        },
+        range: [0, 16],
+        openingElement: {
+          type: 'JSXOpeningElement',
+          start: 0,
+          end: 2,
+          loc: {
+            start: {
+              line: 1,
+              column: 0
+            },
+            end: {
+              line: 1,
+              column: 2
+            }
+          },
+          range: [0, 2],
+          attributes: [],
+          name: '',
+          selfClosing: false
+        },
+        closingElement: {
+          type: 'JSXClosingElement',
+          start: 13,
+          end: 16,
+          loc: {
+            start: {
+              line: 1,
+              column: 13
+            },
+            end: {
+              line: 1,
+              column: 16
+            }
+          },
+          range: [13, 16],
+          name: ''
+        },
+        children: [{
+          type: 'JSXElement',
+          start: 2,
+          end: 13,
+          loc: {
+            start: {
+              line: 1,
+              column: 2
+            },
+            end: {
+              line: 1,
+              column: 13
+            }
+          },
+          range: [2, 13],
+          openingElement: {
+            type: 'JSXOpeningElement',
+            start: 2,
+            end: 7,
+            loc: {
+              start: {
+                line: 1,
+                column: 2
+              },
+              end: {
+                line: 1,
+                column: 7
+              }
+            },
+            range: [2, 7],
+            attributes: [],
+            name: {
+              type: 'JSXIdentifier',
+              start: 3,
+              end: 6,
+              loc: {
+                start: {
+                  line: 1,
+                  column: 3
+                },
+                end: {
+                  line: 1,
+                  column: 6
+                }
+              },
+              range: [3, 6],
+              name: 'div'
+            },
+            selfClosing: false
+          },
+          closingElement: {
+            type: 'JSXClosingElement',
+            start: 7,
+            end: 13,
+            loc: {
+              start: {
+                line: 1,
+                column: 7
+              },
+              end: {
+                line: 1,
+                column: 13
+              }
+            },
+            range: [7, 13],
+            name: {
+              type: 'JSXIdentifier',
+              start: 9,
+              end: 12,
+              loc: {
+                start: {
+                  line: 1,
+                  column: 9
+                },
+                end: {
+                  line: 1,
+                  column: 12
+                }
+              },
+              range: [9, 12],
+              name: 'div'
+            }
+          },
+          children: []
+        }]
+      }
     }
   },
   'Regression': {
