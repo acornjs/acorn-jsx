@@ -168,6 +168,9 @@ module.exports = function(acorn) {
   // Transforms JSX element name to string.
 
   function getQualifiedJSXName(object) {
+    if (!object)
+      return object;
+
     if (object.type === 'JSXIdentifier')
       return object.name;
 
@@ -209,6 +212,8 @@ module.exports = function(acorn) {
   // or single identifier.
 
   pp.jsx_parseElementName = function() {
+    if (this.type === tt.jsxTagEnd)
+      return '';
     var startPos = this.start, startLoc = this.startLoc;
     var node = this.jsx_parseNamespacedName();
     if (this.type === tt.dot && node.type === 'JSXNamespacedName' && !this.options.plugins.jsx.allowNamespacedObjects) {
@@ -348,7 +353,7 @@ module.exports = function(acorn) {
     if (this.type === tt.relational && this.value === "<") {
       this.raise(this.start, "Adjacent JSX elements must be wrapped in an enclosing tag");
     }
-    return this.finishNode(node, 'JSXElement');
+    return this.finishNode(node, openingElement.name ? 'JSXElement' : 'JSXFragment');
   };
 
   // Parse JSX text
