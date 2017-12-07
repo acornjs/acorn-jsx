@@ -294,7 +294,7 @@ module.exports = function(acorn) {
       node.attributes.push(this.jsx_parseAttribute());
     node.selfClosing = this.eat(tt.slash);
     this.expect(tt.jsxTagEnd);
-    return this.finishNode(node, 'JSXOpeningElement');
+    return this.finishNode(node, node.name ? 'JSXOpeningElement' : 'JSXOpeningFragment');
   };
 
   // Parses JSX closing tag starting after '</'.
@@ -303,7 +303,7 @@ module.exports = function(acorn) {
     var node = this.startNodeAt(startPos, startLoc);
     node.name = this.jsx_parseElementName();
     this.expect(tt.jsxTagEnd);
-    return this.finishNode(node, 'JSXClosingElement');
+    return this.finishNode(node, node.name ? 'JSXClosingElement' : 'JSXClosingFragment');
   };
 
   // Parses entire JSX element, including it's opening tag

@@ -3216,7 +3216,7 @@ var fbTestFixture = {
         },
         range: [0, 16],
         openingElement: {
-          type: 'JSXOpeningElement',
+          type: 'JSXOpeningFragment',
           start: 0,
           end: 2,
           loc: {
@@ -3235,7 +3235,7 @@ var fbTestFixture = {
           selfClosing: false
         },
         closingElement: {
-          type: 'JSXClosingElement',
+          type: 'JSXClosingFragment',
           start: 13,
           end: 16,
           loc: {
