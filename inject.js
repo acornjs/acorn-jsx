@@ -294,6 +294,7 @@ module.exports = function(acorn) {
       node.attributes.push(this.jsx_parseAttribute());
     node.selfClosing = this.eat(tt.slash);
     this.expect(tt.jsxTagEnd);
+    if (!node.name) delete node.name;
     return this.finishNode(node, node.name ? 'JSXOpeningElement' : 'JSXOpeningFragment');
   };
 
@@ -303,6 +304,7 @@ module.exports = function(acorn) {
     var node = this.startNodeAt(startPos, startLoc);
     node.name = this.jsx_parseElementName();
     this.expect(tt.jsxTagEnd);
+    if (!node.name) delete node.name;
     return this.finishNode(node, node.name ? 'JSXClosingElement' : 'JSXClosingFragment');
   };
 
