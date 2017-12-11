@@ -289,12 +289,12 @@ module.exports = function(acorn) {
   pp.jsx_parseOpeningElementAt = function(startPos, startLoc) {
     var node = this.startNodeAt(startPos, startLoc);
     node.attributes = [];
-    node.name = this.jsx_parseElementName();
+    var nodeName = this.jsx_parseElementName();
+    if (nodeName) node.name = nodeName;
     while (this.type !== tt.slash && this.type !== tt.jsxTagEnd)
       node.attributes.push(this.jsx_parseAttribute());
     node.selfClosing = this.eat(tt.slash);
     this.expect(tt.jsxTagEnd);
-    if (!node.name) delete node.name;
     return this.finishNode(node, node.name ? 'JSXOpeningElement' : 'JSXOpeningFragment');
   };
 
@@ -302,9 +302,9 @@ module.exports = function(acorn) {
 
   pp.jsx_parseClosingElementAt = function(startPos, startLoc) {
     var node = this.startNodeAt(startPos, startLoc);
-    node.name = this.jsx_parseElementName();
+    var nodeName = this.jsx_parseElementName();
+    if (nodeName) node.name = nodeName;
     this.expect(tt.jsxTagEnd);
-    if (!node.name) delete node.name;
     return this.finishNode(node, node.name ? 'JSXClosingElement' : 'JSXClosingFragment');
   };
 
