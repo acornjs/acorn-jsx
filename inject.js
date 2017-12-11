@@ -295,7 +295,7 @@ module.exports = function(acorn) {
       node.attributes.push(this.jsx_parseAttribute());
     node.selfClosing = this.eat(tt.slash);
     this.expect(tt.jsxTagEnd);
-    return this.finishNode(node, node.name ? 'JSXOpeningElement' : 'JSXOpeningFragment');
+    return this.finishNode(node, nodeName ? 'JSXOpeningElement' : 'JSXOpeningFragment');
   };
 
   // Parses JSX closing tag starting after '</'.
@@ -305,7 +305,7 @@ module.exports = function(acorn) {
     var nodeName = this.jsx_parseElementName();
     if (nodeName) node.name = nodeName;
     this.expect(tt.jsxTagEnd);
-    return this.finishNode(node, node.name ? 'JSXClosingElement' : 'JSXClosingFragment');
+    return this.finishNode(node, nodeName ? 'JSXClosingElement' : 'JSXClosingFragment');
   };
 
   // Parses entire JSX element, including it's opening tag
