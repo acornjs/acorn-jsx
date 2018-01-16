@@ -289,21 +289,23 @@ module.exports = function(acorn) {
   pp.jsx_parseOpeningElementAt = function(startPos, startLoc) {
     var node = this.startNodeAt(startPos, startLoc);
     node.attributes = [];
-    node.name = this.jsx_parseElementName();
+    var nodeName = this.jsx_parseElementName();
+    if (nodeName) node.name = nodeName;
     while (this.type !== tt.slash && this.type !== tt.jsxTagEnd)
       node.attributes.push(this.jsx_parseAttribute());
     node.selfClosing = this.eat(tt.slash);
     this.expect(tt.jsxTagEnd);
-    return this.finishNode(node, 'JSXOpeningElement');
+    return this.finishNode(node, nodeName ? 'JSXOpeningElement' : 'JSXOpeningFragment');
   };
 
   // Parses JSX closing tag starting after '</'.
 
   pp.jsx_parseClosingElementAt = function(startPos, startLoc) {
     var node = this.startNodeAt(startPos, startLoc);
-    node.name = this.jsx_parseElementName();
+    var nodeName = this.jsx_parseElementName();
+    if (nodeName) node.name = nodeName;
     this.expect(tt.jsxTagEnd);
-    return this.finishNode(node, 'JSXClosingElement');
+    return this.finishNode(node, nodeName ? 'JSXClosingElement' : 'JSXClosingFragment');
   };
 
   // Parses entire JSX element, including it's opening tag
