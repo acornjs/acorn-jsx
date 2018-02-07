@@ -348,14 +348,15 @@ module.exports = function(acorn) {
           'Expected corresponding JSX closing tag for <' + getQualifiedJSXName(openingElement.name) + '>');
       }
     }
+    var fragmentOrElement = openingElement.name ? 'Element' : 'Fragment';
 
-    node.openingElement = openingElement;
-    node.closingElement = closingElement;
+    node['opening' + fragmentOrElement] = openingElement;
+    node['closing' + fragmentOrElement] = closingElement;
     node.children = children;
     if (this.type === tt.relational && this.value === "<") {
       this.raise(this.start, "Adjacent JSX elements must be wrapped in an enclosing tag");
     }
-    return this.finishNode(node, openingElement.name ? 'JSXElement' : 'JSXFragment');
+    return this.finishNode(node, 'JSX' + fragmentOrElement);
   };
 
   // Parse JSX text
