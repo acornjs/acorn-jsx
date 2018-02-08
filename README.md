@@ -59,6 +59,17 @@ var ast = acorn.parse(code, {
 
 Note that by default `allowNamespaces` is enabled for spec compliancy.
 
+## Walk
+
+`acorn-jsx/walk.js` implements support for acorn's walk feature:
+
+```javascript
+var acornWalk = require('acorn/dist/walk');
+var jsxWalk = require('acorn-jsx/walk');
+
+jsxWalk(acornWalk);
+```
+
 ## License
 
 This plugin is issued under the [MIT license](./LICENSE).
