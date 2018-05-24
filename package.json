@@ -16,13 +16,15 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "node test/run.js"
+    "test": "node test/run.js",
+    "fmt": "prettier --config .prettierrc --write '**/*'"
   },
   "dependencies": {
-    "acorn": "^5.0.3"
+    "acorn": "^5.5.3"
   },
   "devDependencies": {
-    "chai": "^4.0.2",
-    "mocha": "^3.4.2"
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "prettier": "^1.12.1"
   }
 }
