@@ -22,16 +22,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 var fbTestFixture = {
   // Taken and adapted from esprima-fb/fbtest.js.
-  'JSX': {
+  JSX: {
     '<a />': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           name: {
-            type: "JSXIdentifier",
-            name: "a",
+            type: 'JSXIdentifier',
+            name: 'a',
             range: [1, 2],
             loc: {
               start: { line: 1, column: 1 },
@@ -94,41 +94,43 @@ var fbTestFixture = {
             }
           },
           selfClosing: true,
-          attributes: [{
-            type: 'JSXAttribute',
-            name: {
-              type: 'JSXNamespacedName',
-              namespace: {
-                type: 'JSXIdentifier',
-                name: 'n',
-                range: [5, 6],
+          attributes: [
+            {
+              type: 'JSXAttribute',
+              name: {
+                type: 'JSXNamespacedName',
+                namespace: {
+                  type: 'JSXIdentifier',
+                  name: 'n',
+                  range: [5, 6],
+                  loc: {
+                    start: { line: 1, column: 5 },
+                    end: { line: 1, column: 6 }
+                  }
+                },
+                name: {
+                  type: 'JSXIdentifier',
+                  name: 'v',
+                  range: [7, 8],
+                  loc: {
+                    start: { line: 1, column: 7 },
+                    end: { line: 1, column: 8 }
+                  }
+                },
+                range: [5, 8],
                 loc: {
                   start: { line: 1, column: 5 },
-                  end: { line: 1, column: 6 }
-                }
-              },
-              name: {
-                type: 'JSXIdentifier',
-                name: 'v',
-                range: [7, 8],
-                loc: {
-                  start: { line: 1, column: 7 },
                   end: { line: 1, column: 8 }
                 }
               },
+              value: null,
               range: [5, 8],
               loc: {
                 start: { line: 1, column: 5 },
                 end: { line: 1, column: 8 }
               }
-            },
-            value: null,
-            range: [5, 8],
-            loc: {
-              start: { line: 1, column: 5 },
-              end: { line: 1, column: 8 }
             }
-          }],
+          ],
           range: [0, 11],
           loc: {
             start: { line: 1, column: 0 },
@@ -166,50 +168,52 @@ var fbTestFixture = {
             }
           },
           selfClosing: false,
-          attributes: [{
-            type: 'JSXAttribute',
-            name: {
-              type: 'JSXNamespacedName',
-              namespace: {
-                type: 'JSXIdentifier',
-                name: 'n',
-                range: [3, 4],
+          attributes: [
+            {
+              type: 'JSXAttribute',
+              name: {
+                type: 'JSXNamespacedName',
+                namespace: {
+                  type: 'JSXIdentifier',
+                  name: 'n',
+                  range: [3, 4],
+                  loc: {
+                    start: { line: 1, column: 3 },
+                    end: { line: 1, column: 4 }
+                  }
+                },
+                name: {
+                  type: 'JSXIdentifier',
+                  name: 'foo',
+                  range: [5, 8],
+                  loc: {
+                    start: { line: 1, column: 5 },
+                    end: { line: 1, column: 8 }
+                  }
+                },
+                range: [3, 8],
                 loc: {
                   start: { line: 1, column: 3 },
-                  end: { line: 1, column: 4 }
-                }
-              },
-              name: {
-                type: 'JSXIdentifier',
-                name: 'foo',
-                range: [5, 8],
-                loc: {
-                  start: { line: 1, column: 5 },
                   end: { line: 1, column: 8 }
                 }
               },
-              range: [3, 8],
+              value: {
+                type: 'Literal',
+                value: 'bar',
+                raw: '"bar"',
+                range: [9, 14],
+                loc: {
+                  start: { line: 1, column: 9 },
+                  end: { line: 1, column: 14 }
+                }
+              },
+              range: [3, 14],
               loc: {
                 start: { line: 1, column: 3 },
-                end: { line: 1, column: 8 }
-              }
-            },
-            value: {
-              type: 'Literal',
-              value: 'bar',
-              raw: '"bar"',
-              range: [9, 14],
-              loc: {
-                start: { line: 1, column: 9 },
                 end: { line: 1, column: 14 }
               }
-            },
-            range: [3, 14],
-            loc: {
-              start: { line: 1, column: 3 },
-              end: { line: 1, column: 14 }
             }
-          }],
+          ],
           range: [0, 15],
           loc: {
             start: { line: 1, column: 0 },
@@ -233,113 +237,120 @@ var fbTestFixture = {
             end: { line: 1, column: 40 }
           }
         },
-        children: [{
-          type: 'JSXText',
-          value: ' ',
-          raw: ' ',
-          range: [15, 16],
-          loc: {
-            start: { line: 1, column: 15 },
-            end: { line: 1, column: 16 }
-          }
-        }, {
-          type: 'JSXExpressionContainer',
-          expression: {
-            type: 'Identifier',
-            name: 'value',
-            range: [17, 22],
+        children: [
+          {
+            type: 'JSXText',
+            value: ' ',
+            raw: ' ',
+            range: [15, 16],
             loc: {
-              start: { line: 1, column: 17 },
-              end: { line: 1, column: 22 }
+              start: { line: 1, column: 15 },
+              end: { line: 1, column: 16 }
             }
           },
-          range: [16, 23],
-          loc: {
-            start: { line: 1, column: 16 },
-            end: { line: 1, column: 23 }
-          }
-        }, {
-          type: 'JSXText',
-          value: ' ',
-          raw: ' ',
-          range: [23, 24],
-          loc: {
-            start: { line: 1, column: 23 },
-            end: { line: 1, column: 24 }
-          }
-        }, {
-          type: 'JSXElement',
-          openingElement: {
-            type: 'JSXOpeningElement',
-            name: {
-              type: 'JSXIdentifier',
-              name: 'b',
-              range: [25, 26],
+          {
+            type: 'JSXExpressionContainer',
+            expression: {
+              type: 'Identifier',
+              name: 'value',
+              range: [17, 22],
               loc: {
-                start: { line: 1, column: 25 },
-                end: { line: 1, column: 26 }
+                start: { line: 1, column: 17 },
+                end: { line: 1, column: 22 }
               }
             },
-            selfClosing: false,
-            attributes: [],
-            range: [24, 27],
+            range: [16, 23],
             loc: {
-              start: { line: 1, column: 24 },
-              end: { line: 1, column: 27 }
+              start: { line: 1, column: 16 },
+              end: { line: 1, column: 23 }
             }
           },
-          closingElement: {
-            type: 'JSXClosingElement',
-            name: {
-              type: 'JSXIdentifier',
-              name: 'b',
-              range: [34, 35],
-              loc: {
-                start: { line: 1, column: 34 },
-                end: { line: 1, column: 35 }
-              }
-            },
-            range: [32, 36],
+          {
+            type: 'JSXText',
+            value: ' ',
+            raw: ' ',
+            range: [23, 24],
             loc: {
-              start: { line: 1, column: 32 },
-              end: { line: 1, column: 36 }
+              start: { line: 1, column: 23 },
+              end: { line: 1, column: 24 }
             }
           },
-          children: [{
+          {
             type: 'JSXElement',
             openingElement: {
               type: 'JSXOpeningElement',
               name: {
                 type: 'JSXIdentifier',
-                name: 'c',
-                range: [28, 29],
+                name: 'b',
+                range: [25, 26],
                 loc: {
-                  start: { line: 1, column: 28 },
-                  end: { line: 1, column: 29 }
+                  start: { line: 1, column: 25 },
+                  end: { line: 1, column: 26 }
                 }
               },
-              selfClosing: true,
+              selfClosing: false,
               attributes: [],
-              range: [27, 32],
+              range: [24, 27],
               loc: {
-                start: { line: 1, column: 27 },
-                end: { line: 1, column: 32 }
+                start: { line: 1, column: 24 },
+                end: { line: 1, column: 27 }
               }
             },
-            closingElement: null,
-            children: [],
-            range: [27, 32],
+            closingElement: {
+              type: 'JSXClosingElement',
+              name: {
+                type: 'JSXIdentifier',
+                name: 'b',
+                range: [34, 35],
+                loc: {
+                  start: { line: 1, column: 34 },
+                  end: { line: 1, column: 35 }
+                }
+              },
+              range: [32, 36],
+              loc: {
+                start: { line: 1, column: 32 },
+                end: { line: 1, column: 36 }
+              }
+            },
+            children: [
+              {
+                type: 'JSXElement',
+                openingElement: {
+                  type: 'JSXOpeningElement',
+                  name: {
+                    type: 'JSXIdentifier',
+                    name: 'c',
+                    range: [28, 29],
+                    loc: {
+                      start: { line: 1, column: 28 },
+                      end: { line: 1, column: 29 }
+                    }
+                  },
+                  selfClosing: true,
+                  attributes: [],
+                  range: [27, 32],
+                  loc: {
+                    start: { line: 1, column: 27 },
+                    end: { line: 1, column: 32 }
+                  }
+                },
+                closingElement: null,
+                children: [],
+                range: [27, 32],
+                loc: {
+                  start: { line: 1, column: 27 },
+                  end: { line: 1, column: 32 }
+                }
+              }
+            ],
+            range: [24, 36],
             loc: {
-              start: { line: 1, column: 27 },
-              end: { line: 1, column: 32 }
+              start: { line: 1, column: 24 },
+              end: { line: 1, column: 36 }
             }
-          }],
-          range: [24, 36],
-          loc: {
-            start: { line: 1, column: 24 },
-            end: { line: 1, column: 36 }
           }
-        }],
+        ],
         range: [0, 40],
         loc: {
           start: { line: 1, column: 0 },
@@ -354,31 +365,31 @@ var fbTestFixture = {
     },
 
     '<a b={" "} c=" " d="&amp;" e="&ampr;" />': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           name: {
-            type: "JSXIdentifier",
-            name: "a",
+            type: 'JSXIdentifier',
+            name: 'a',
             range: [1, 2]
           },
           selfClosing: true,
           attributes: [
             {
-              type: "JSXAttribute",
+              type: 'JSXAttribute',
               name: {
-                type: "JSXIdentifier",
-                name: "b",
+                type: 'JSXIdentifier',
+                name: 'b',
                 range: [3, 4]
               },
               value: {
-                type: "JSXExpressionContainer",
+                type: 'JSXExpressionContainer',
                 expression: {
-                  type: "Literal",
-                  value: " ",
-                  raw: "\" \"",
+                  type: 'Literal',
+                  value: ' ',
+                  raw: '" "',
                   range: [6, 9]
                 },
                 range: [5, 10]
@@ -386,46 +397,46 @@ var fbTestFixture = {
               range: [3, 10]
             },
             {
-              type: "JSXAttribute",
+              type: 'JSXAttribute',
               name: {
-                type: "JSXIdentifier",
-                name: "c",
+                type: 'JSXIdentifier',
+                name: 'c',
                 range: [11, 12]
               },
               value: {
-                type: "Literal",
-                value: " ",
-                raw: "\" \"",
+                type: 'Literal',
+                value: ' ',
+                raw: '" "',
                 range: [13, 16]
               },
               range: [11, 16]
             },
             {
-              type: "JSXAttribute",
+              type: 'JSXAttribute',
               name: {
-                type: "JSXIdentifier",
-                name: "d",
+                type: 'JSXIdentifier',
+                name: 'd',
                 range: [17, 18]
               },
               value: {
-                type: "Literal",
-                value: "&",
-                raw: "\"&amp;\"",
+                type: 'Literal',
+                value: '&',
+                raw: '"&amp;"',
                 range: [19, 26]
               },
               range: [17, 26]
             },
             {
-              type: "JSXAttribute",
+              type: 'JSXAttribute',
               name: {
-                type: "JSXIdentifier",
-                name: "e",
+                type: 'JSXIdentifier',
+                name: 'e',
                 range: [27, 28]
               },
               value: {
-                type: "Literal",
-                value: "&ampr;",
-                raw: "\"&ampr;\"",
+                type: 'Literal',
+                value: '&ampr;',
+                raw: '"&ampr;"',
                 range: [29, 37]
               },
               range: [27, 37]
@@ -441,18 +452,15 @@ var fbTestFixture = {
     },
 
     '<a\n/>': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           name: {
-            type: "JSXIdentifier",
-            name: "a",
-            range: [
-              1,
-              2
-            ],
+            type: 'JSXIdentifier',
+            name: 'a',
+            range: [1, 2],
             loc: {
               start: {
                 line: 1,
@@ -466,10 +474,7 @@ var fbTestFixture = {
           },
           selfClosing: true,
           attributes: [],
-          range: [
-            0,
-            5
-          ],
+          range: [0, 5],
           loc: {
             start: {
               line: 1,
@@ -483,10 +488,7 @@ var fbTestFixture = {
         },
         closingElement: null,
         children: [],
-        range: [
-          0,
-          5
-        ],
+        range: [0, 5],
         loc: {
           start: {
             line: 1,
@@ -498,10 +500,7 @@ var fbTestFixture = {
           }
         }
       },
-      range: [
-        0,
-        5
-      ],
+      range: [0, 5],
       loc: {
         start: {
           line: 1,
@@ -515,18 +514,15 @@ var fbTestFixture = {
     },
 
     '<日本語></日本語>': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           name: {
-            type: "JSXIdentifier",
-            name: "日本語",
-            range: [
-              1,
-              4
-            ],
+            type: 'JSXIdentifier',
+            name: '日本語',
+            range: [1, 4],
             loc: {
               start: {
                 line: 1,
@@ -540,10 +536,7 @@ var fbTestFixture = {
           },
           selfClosing: false,
           attributes: [],
-          range: [
-            0,
-            5
-          ],
+          range: [0, 5],
           loc: {
             start: {
               line: 1,
@@ -556,14 +549,11 @@ var fbTestFixture = {
           }
         },
         closingElement: {
-          type: "JSXClosingElement",
+          type: 'JSXClosingElement',
           name: {
-            type: "JSXIdentifier",
-            name: "日本語",
-            range: [
-              7,
-              10
-            ],
+            type: 'JSXIdentifier',
+            name: '日本語',
+            range: [7, 10],
             loc: {
               start: {
                 line: 1,
@@ -575,10 +565,7 @@ var fbTestFixture = {
               }
             }
           },
-          range: [
-            5,
-            11
-          ],
+          range: [5, 11],
           loc: {
             start: {
               line: 1,
@@ -591,10 +578,7 @@ var fbTestFixture = {
           }
         },
         children: [],
-        range: [
-          0,
-          11
-        ],
+        range: [0, 11],
         loc: {
           start: {
             line: 1,
@@ -606,10 +590,7 @@ var fbTestFixture = {
           }
         }
       },
-      range: [
-        0,
-        11
-      ],
+      range: [0, 11],
       loc: {
         start: {
           line: 1,
@@ -623,18 +604,15 @@ var fbTestFixture = {
     },
 
     '<AbC-def\n  test="&#x0026;&#38;">\nbar\nbaz\n</AbC-def>': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           name: {
-            type: "JSXIdentifier",
-            name: "AbC-def",
-            range: [
-              1,
-              8
-            ],
+            type: 'JSXIdentifier',
+            name: 'AbC-def',
+            range: [1, 8],
             loc: {
               start: {
                 line: 1,
@@ -649,14 +627,11 @@ var fbTestFixture = {
           selfClosing: false,
           attributes: [
             {
-              type: "JSXAttribute",
+              type: 'JSXAttribute',
               name: {
-                type: "JSXIdentifier",
-                name: "test",
-                range: [
-                  11,
-                  15
-                ],
+                type: 'JSXIdentifier',
+                name: 'test',
+                range: [11, 15],
                 loc: {
                   start: {
                     line: 2,
@@ -669,13 +644,10 @@ var fbTestFixture = {
                 }
               },
               value: {
-                type: "Literal",
-                value: "&&",
-                raw: "\"&#x0026;&#38;\"",
-                range: [
-                  16,
-                  31
-                ],
+                type: 'Literal',
+                value: '&&',
+                raw: '"&#x0026;&#38;"',
+                range: [16, 31],
                 loc: {
                   start: {
                     line: 2,
@@ -687,10 +659,7 @@ var fbTestFixture = {
                   }
                 }
               },
-              range: [
-                11,
-                31
-              ],
+              range: [11, 31],
               loc: {
                 start: {
                   line: 2,
@@ -703,10 +672,7 @@ var fbTestFixture = {
               }
             }
           ],
-          range: [
-            0,
-            32
-          ],
+          range: [0, 32],
           loc: {
             start: {
               line: 1,
@@ -719,14 +685,11 @@ var fbTestFixture = {
           }
         },
         closingElement: {
-          type: "JSXClosingElement",
+          type: 'JSXClosingElement',
           name: {
-            type: "JSXIdentifier",
-            name: "AbC-def",
-            range: [
-              43,
-              50
-            ],
+            type: 'JSXIdentifier',
+            name: 'AbC-def',
+            range: [43, 50],
             loc: {
               start: {
                 line: 5,
@@ -738,10 +701,7 @@ var fbTestFixture = {
               }
             }
           },
-          range: [
-            41,
-            51
-          ],
+          range: [41, 51],
           loc: {
             start: {
               line: 5,
@@ -755,13 +715,10 @@ var fbTestFixture = {
         },
         children: [
           {
-            type: "JSXText",
-            value: "\nbar\nbaz\n",
-            raw: "\nbar\nbaz\n",
-            range: [
-              32,
-              41
-            ],
+            type: 'JSXText',
+            value: '\nbar\nbaz\n',
+            raw: '\nbar\nbaz\n',
+            range: [32, 41],
             loc: {
               start: {
                 line: 2,
@@ -774,10 +731,7 @@ var fbTestFixture = {
             }
           }
         ],
-        range: [
-          0,
-          51
-        ],
+        range: [0, 51],
         loc: {
           start: {
             line: 1,
@@ -789,10 +743,7 @@ var fbTestFixture = {
           }
         }
       },
-      range: [
-        0,
-        51
-      ],
+      range: [0, 51],
       loc: {
         start: {
           line: 1,
@@ -806,18 +757,15 @@ var fbTestFixture = {
     },
 
     '<a b={x ? <c /> : <d />} />': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           name: {
-            type: "JSXIdentifier",
-            name: "a",
-            range: [
-              1,
-              2
-            ],
+            type: 'JSXIdentifier',
+            name: 'a',
+            range: [1, 2],
             loc: {
               start: {
                 line: 1,
@@ -832,14 +780,11 @@ var fbTestFixture = {
           selfClosing: true,
           attributes: [
             {
-              type: "JSXAttribute",
+              type: 'JSXAttribute',
               name: {
-                type: "JSXIdentifier",
-                name: "b",
-                range: [
-                  3,
-                  4
-                ],
+                type: 'JSXIdentifier',
+                name: 'b',
+                range: [3, 4],
                 loc: {
                   start: {
                     line: 1,
@@ -852,16 +797,13 @@ var fbTestFixture = {
                 }
               },
               value: {
-                type: "JSXExpressionContainer",
+                type: 'JSXExpressionContainer',
                 expression: {
-                  type: "ConditionalExpression",
+                  type: 'ConditionalExpression',
                   test: {
-                    type: "Identifier",
-                    name: "x",
-                    range: [
-                      6,
-                      7
-                    ],
+                    type: 'Identifier',
+                    name: 'x',
+                    range: [6, 7],
                     loc: {
                       start: {
                         line: 1,
@@ -874,16 +816,13 @@ var fbTestFixture = {
                     }
                   },
                   consequent: {
-                    type: "JSXElement",
+                    type: 'JSXElement',
                     openingElement: {
-                      type: "JSXOpeningElement",
+                      type: 'JSXOpeningElement',
                       name: {
-                        type: "JSXIdentifier",
-                        name: "c",
-                        range: [
-                          11,
-                          12
-                        ],
+                        type: 'JSXIdentifier',
+                        name: 'c',
+                        range: [11, 12],
                         loc: {
                           start: {
                             line: 1,
@@ -897,10 +836,7 @@ var fbTestFixture = {
                       },
                       selfClosing: true,
                       attributes: [],
-                      range: [
-                        10,
-                        15
-                      ],
+                      range: [10, 15],
                       loc: {
                         start: {
                           line: 1,
@@ -914,10 +850,7 @@ var fbTestFixture = {
                     },
                     closingElement: null,
                     children: [],
-                    range: [
-                      10,
-                      15
-                    ],
+                    range: [10, 15],
                     loc: {
                       start: {
                         line: 1,
@@ -930,16 +863,13 @@ var fbTestFixture = {
                     }
                   },
                   alternate: {
-                    type: "JSXElement",
+                    type: 'JSXElement',
                     openingElement: {
-                      type: "JSXOpeningElement",
+                      type: 'JSXOpeningElement',
                       name: {
-                        type: "JSXIdentifier",
-                        name: "d",
-                        range: [
-                          19,
-                          20
-                        ],
+                        type: 'JSXIdentifier',
+                        name: 'd',
+                        range: [19, 20],
                         loc: {
                           start: {
                             line: 1,
@@ -953,10 +883,7 @@ var fbTestFixture = {
                       },
                       selfClosing: true,
                       attributes: [],
-                      range: [
-                        18,
-                        23
-                      ],
+                      range: [18, 23],
                       loc: {
                         start: {
                           line: 1,
@@ -970,10 +897,7 @@ var fbTestFixture = {
                     },
                     closingElement: null,
                     children: [],
-                    range: [
-                      18,
-                      23
-                    ],
+                    range: [18, 23],
                     loc: {
                       start: {
                         line: 1,
@@ -985,10 +909,7 @@ var fbTestFixture = {
                       }
                     }
                   },
-                  range: [
-                    6,
-                    23
-                  ],
+                  range: [6, 23],
                   loc: {
                     start: {
                       line: 1,
@@ -1000,10 +921,7 @@ var fbTestFixture = {
                     }
                   }
                 },
-                range: [
-                  5,
-                  24
-                ],
+                range: [5, 24],
                 loc: {
                   start: {
                     line: 1,
@@ -1015,10 +933,7 @@ var fbTestFixture = {
                   }
                 }
               },
-              range: [
-                3,
-                24
-              ],
+              range: [3, 24],
               loc: {
                 start: {
                   line: 1,
@@ -1031,10 +946,7 @@ var fbTestFixture = {
               }
             }
           ],
-          range: [
-            0,
-            27
-          ],
+          range: [0, 27],
           loc: {
             start: {
               line: 1,
@@ -1048,10 +960,7 @@ var fbTestFixture = {
         },
         closingElement: null,
         children: [],
-        range: [
-          0,
-          27
-        ],
+        range: [0, 27],
         loc: {
           start: {
             line: 1,
@@ -1063,10 +972,7 @@ var fbTestFixture = {
           }
         }
       },
-      range: [
-        0,
-        27
-      ],
+      range: [0, 27],
       loc: {
         start: {
           line: 1,
@@ -1119,22 +1025,24 @@ var fbTestFixture = {
             end: { line: 1, column: 9 }
           }
         },
-        children: [{
-          type: 'JSXExpressionContainer',
-          expression: {
-            type: 'JSXEmptyExpression',
-            range: [4, 4],
+        children: [
+          {
+            type: 'JSXExpressionContainer',
+            expression: {
+              type: 'JSXEmptyExpression',
+              range: [4, 4],
+              loc: {
+                start: { line: 1, column: 4 },
+                end: { line: 1, column: 4 }
+              }
+            },
+            range: [3, 5],
             loc: {
-              start: { line: 1, column: 4 },
-              end: { line: 1, column: 4 }
+              start: { line: 1, column: 3 },
+              end: { line: 1, column: 5 }
             }
-          },
-          range: [3, 5],
-          loc: {
-            start: { line: 1, column: 3 },
-            end: { line: 1, column: 5 }
           }
-        }],
+        ],
         range: [0, 9],
         loc: {
           start: { line: 1, column: 0 },
@@ -1188,22 +1096,24 @@ var fbTestFixture = {
             end: { line: 1, column: 32 }
           }
         },
-        children: [{
-          type: 'JSXExpressionContainer',
-          expression: {
-            type: 'JSXEmptyExpression',
-            range: [4, 27],
+        children: [
+          {
+            type: 'JSXExpressionContainer',
+            expression: {
+              type: 'JSXEmptyExpression',
+              range: [4, 27],
+              loc: {
+                start: { line: 1, column: 4 },
+                end: { line: 1, column: 27 }
+              }
+            },
+            range: [3, 28],
             loc: {
-              start: { line: 1, column: 4 },
-              end: { line: 1, column: 27 }
+              start: { line: 1, column: 3 },
+              end: { line: 1, column: 28 }
             }
-          },
-          range: [3, 28],
-          loc: {
-            start: { line: 1, column: 3 },
-            end: { line: 1, column: 28 }
           }
-        }],
+        ],
         range: [0, 32],
         loc: {
           start: { line: 1, column: 0 },
@@ -1257,16 +1167,18 @@ var fbTestFixture = {
             end: { line: 1, column: 24 }
           }
         },
-        children: [{
-          type: 'JSXText',
-          value: '@test content',
-          raw: '@test content',
-          range: [5, 18],
-          loc: {
-            start: { line: 1, column: 5 },
-            end: { line: 1, column: 18 }
+        children: [
+          {
+            type: 'JSXText',
+            value: '@test content',
+            raw: '@test content',
+            range: [5, 18],
+            loc: {
+              start: { line: 1, column: 5 },
+              end: { line: 1, column: 18 }
+            }
           }
-        }],
+        ],
         range: [0, 24],
         loc: {
           start: { line: 1, column: 0 },
@@ -1289,10 +1201,7 @@ var fbTestFixture = {
           name: {
             type: 'JSXIdentifier',
             name: 'div',
-            range: [
-              1,
-              4
-            ],
+            range: [1, 4],
             loc: {
               start: {
                 line: 1,
@@ -1306,10 +1215,7 @@ var fbTestFixture = {
           },
           selfClosing: false,
           attributes: [],
-          range: [
-            0,
-            5
-          ],
+          range: [0, 5],
           loc: {
             start: {
               line: 1,
@@ -1326,10 +1232,7 @@ var fbTestFixture = {
           name: {
             type: 'JSXIdentifier',
             name: 'div',
-            range: [
-              37,
-              40
-            ],
+            range: [37, 40],
             loc: {
               start: {
                 line: 1,
@@ -1341,10 +1244,7 @@ var fbTestFixture = {
               }
             }
           },
-          range: [
-            35,
-            41
-          ],
+          range: [35, 41],
           loc: {
             start: {
               line: 1,
@@ -1356,34 +1256,43 @@ var fbTestFixture = {
             }
           }
         },
-        children: [{
-          type: 'JSXElement',
-          openingElement: {
-            type: 'JSXOpeningElement',
-            name: {
-              type: 'JSXIdentifier',
-              name: 'br',
-              range: [
-                6,
-                8
-              ],
+        children: [
+          {
+            type: 'JSXElement',
+            openingElement: {
+              type: 'JSXOpeningElement',
+              name: {
+                type: 'JSXIdentifier',
+                name: 'br',
+                range: [6, 8],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 6
+                  },
+                  end: {
+                    line: 1,
+                    column: 8
+                  }
+                }
+              },
+              selfClosing: true,
+              attributes: [],
+              range: [5, 11],
               loc: {
                 start: {
                   line: 1,
-                  column: 6
+                  column: 5
                 },
                 end: {
                   line: 1,
-                  column: 8
+                  column: 11
                 }
               }
             },
-            selfClosing: true,
-            attributes: [],
-            range: [
-              5,
-              11
-            ],
+            closingElement: null,
+            children: [],
+            range: [5, 11],
             loc: {
               start: {
                 line: 1,
@@ -1395,45 +1304,24 @@ var fbTestFixture = {
               }
             }
           },
-          closingElement: null,
-          children: [],
-          range: [
-            5,
-            11
-          ],
-          loc: {
-            start: {
-              line: 1,
-              column: 5
-            },
-            end: {
-              line: 1,
-              column: 11
+          {
+            type: 'JSXText',
+            value: '7x invalid-js-identifier',
+            raw: '7x invalid-js-identifier',
+            range: [11, 35],
+            loc: {
+              start: {
+                line: 1,
+                column: 11
+              },
+              end: {
+                line: 1,
+                column: 35
+              }
             }
           }
-        }, {
-          type: 'JSXText',
-          value: '7x invalid-js-identifier',
-          raw: '7x invalid-js-identifier',
-          range: [
-            11,
-            35
-          ],
-          loc: {
-            start: {
-              line: 1,
-              column: 11
-            },
-            end: {
-              line: 1,
-              column: 35
-            }
-          }
-        }],
-        range: [
-          0,
-          41
         ],
+        range: [0, 41],
         loc: {
           start: {
             line: 1,
@@ -1445,10 +1333,7 @@ var fbTestFixture = {
           }
         }
       },
-      range: [
-        0,
-        41
-      ],
+      range: [0, 41],
       loc: {
         start: {
           line: 1,
@@ -1462,312 +1347,261 @@ var fbTestFixture = {
     },
 
     '<LeftRight left=<a /> right=<b>monkeys /> gorillas</b> />': {
-      "type": "ExpressionStatement",
-      "expression": {
-        "type": "JSXElement",
-        "openingElement": {
-          "type": "JSXOpeningElement",
-          "name": {
-            "type": "JSXIdentifier",
-            "name": "LeftRight",
-            "range": [
-              1,
-              10
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 1
+      type: 'ExpressionStatement',
+      expression: {
+        type: 'JSXElement',
+        openingElement: {
+          type: 'JSXOpeningElement',
+          name: {
+            type: 'JSXIdentifier',
+            name: 'LeftRight',
+            range: [1, 10],
+            loc: {
+              start: {
+                line: 1,
+                column: 1
               },
-              "end": {
-                "line": 1,
-                "column": 10
+              end: {
+                line: 1,
+                column: 10
               }
             }
           },
-          "selfClosing": true,
-          "attributes": [
+          selfClosing: true,
+          attributes: [
             {
-              "type": "JSXAttribute",
-              "name": {
-                "type": "JSXIdentifier",
-                "name": "left",
-                "range": [
-                  11,
-                  15
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 11
+              type: 'JSXAttribute',
+              name: {
+                type: 'JSXIdentifier',
+                name: 'left',
+                range: [11, 15],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 11
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 15
+                  end: {
+                    line: 1,
+                    column: 15
                   }
                 }
               },
-              "value": {
-                "type": "JSXElement",
-                "openingElement": {
-                  "type": "JSXOpeningElement",
-                  "name": {
-                    "type": "JSXIdentifier",
-                    "name": "a",
-                    "range": [
-                      17,
-                      18
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 17
+              value: {
+                type: 'JSXElement',
+                openingElement: {
+                  type: 'JSXOpeningElement',
+                  name: {
+                    type: 'JSXIdentifier',
+                    name: 'a',
+                    range: [17, 18],
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 17
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 18
+                      end: {
+                        line: 1,
+                        column: 18
                       }
                     }
                   },
-                  "selfClosing": true,
-                  "attributes": [],
-                  "range": [
-                    16,
-                    21
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 1,
-                      "column": 16
+                  selfClosing: true,
+                  attributes: [],
+                  range: [16, 21],
+                  loc: {
+                    start: {
+                      line: 1,
+                      column: 16
                     },
-                    "end": {
-                      "line": 1,
-                      "column": 21
+                    end: {
+                      line: 1,
+                      column: 21
                     }
                   }
                 },
                 closingElement: null,
-                "children": [],
-                "range": [
-                  16,
-                  21
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 16
+                children: [],
+                range: [16, 21],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 16
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 21
+                  end: {
+                    line: 1,
+                    column: 21
                   }
                 }
               },
-              "range": [
-                11,
-                21
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 11
+              range: [11, 21],
+              loc: {
+                start: {
+                  line: 1,
+                  column: 11
                 },
-                "end": {
-                  "line": 1,
-                  "column": 21
+                end: {
+                  line: 1,
+                  column: 21
                 }
               }
             },
             {
-              "type": "JSXAttribute",
-              "name": {
-                "type": "JSXIdentifier",
-                "name": "right",
-                "range": [
-                  22,
-                  27
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 22
+              type: 'JSXAttribute',
+              name: {
+                type: 'JSXIdentifier',
+                name: 'right',
+                range: [22, 27],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 22
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 27
+                  end: {
+                    line: 1,
+                    column: 27
                   }
                 }
               },
-              "value": {
-                "type": "JSXElement",
-                "openingElement": {
-                  "type": "JSXOpeningElement",
-                  "name": {
-                    "type": "JSXIdentifier",
-                    "name": "b",
-                    "range": [
-                      29,
-                      30
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 29
+              value: {
+                type: 'JSXElement',
+                openingElement: {
+                  type: 'JSXOpeningElement',
+                  name: {
+                    type: 'JSXIdentifier',
+                    name: 'b',
+                    range: [29, 30],
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 29
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 30
+                      end: {
+                        line: 1,
+                        column: 30
                       }
                     }
                   },
-                  "selfClosing": false,
-                  "attributes": [],
-                  "range": [
-                    28,
-                    31
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 1,
-                      "column": 28
+                  selfClosing: false,
+                  attributes: [],
+                  range: [28, 31],
+                  loc: {
+                    start: {
+                      line: 1,
+                      column: 28
                     },
-                    "end": {
-                      "line": 1,
-                      "column": 31
+                    end: {
+                      line: 1,
+                      column: 31
                     }
                   }
                 },
-                "closingElement": {
-                  "type": "JSXClosingElement",
-                  "name": {
-                    "type": "JSXIdentifier",
-                    "name": "b",
-                    "range": [
-                      52,
-                      53
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 52
+                closingElement: {
+                  type: 'JSXClosingElement',
+                  name: {
+                    type: 'JSXIdentifier',
+                    name: 'b',
+                    range: [52, 53],
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 52
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 53
+                      end: {
+                        line: 1,
+                        column: 53
                       }
                     }
                   },
-                  "range": [
-                    50,
-                    54
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 1,
-                      "column": 50
+                  range: [50, 54],
+                  loc: {
+                    start: {
+                      line: 1,
+                      column: 50
                     },
-                    "end": {
-                      "line": 1,
-                      "column": 54
+                    end: {
+                      line: 1,
+                      column: 54
                     }
                   }
                 },
-                "children": [
+                children: [
                   {
-                    "type": "JSXText",
-                    "value": "monkeys /> gorillas",
-                    "raw": "monkeys /> gorillas",
-                    "range": [
-                      31,
-                      50
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 31
+                    type: 'JSXText',
+                    value: 'monkeys /> gorillas',
+                    raw: 'monkeys /> gorillas',
+                    range: [31, 50],
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 31
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 50
+                      end: {
+                        line: 1,
+                        column: 50
                       }
                     }
                   }
                 ],
-                "range": [
-                  28,
-                  54
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 28
+                range: [28, 54],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 28
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 54
+                  end: {
+                    line: 1,
+                    column: 54
                   }
                 }
               },
-              "range": [
-                22,
-                54
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 22
+              range: [22, 54],
+              loc: {
+                start: {
+                  line: 1,
+                  column: 22
                 },
-                "end": {
-                  "line": 1,
-                  "column": 54
+                end: {
+                  line: 1,
+                  column: 54
                 }
               }
             }
           ],
-          "range": [
-            0,
-            57
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 0
+          range: [0, 57],
+          loc: {
+            start: {
+              line: 1,
+              column: 0
             },
-            "end": {
-              "line": 1,
-              "column": 57
+            end: {
+              line: 1,
+              column: 57
             }
           }
         },
         closingElement: null,
-        "children": [],
-        "range": [
-          0,
-          57
-        ],
-        "loc": {
-          "start": {
-            "line": 1,
-            "column": 0
+        children: [],
+        range: [0, 57],
+        loc: {
+          start: {
+            line: 1,
+            column: 0
           },
-          "end": {
-            "line": 1,
-            "column": 57
+          end: {
+            line: 1,
+            column: 57
           }
         }
       },
-      "range": [
-        0,
-        57
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
+      range: [0, 57],
+      loc: {
+        start: {
+          line: 1,
+          column: 0
         },
-        "end": {
-          "line": 1,
-          "column": 57
+        end: {
+          line: 1,
+          column: 57
         }
       }
     },
@@ -2042,1141 +1876,961 @@ var fbTestFixture = {
     },
 
     '<div {...props} />': {
-      "type": "ExpressionStatement",
-      "expression": {
-        "type": "JSXElement",
-        "openingElement": {
-          "type": "JSXOpeningElement",
-          "name": {
-            "type": "JSXIdentifier",
-            "name": "div",
-            "range": [
-              1,
-              4
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 1
+      type: 'ExpressionStatement',
+      expression: {
+        type: 'JSXElement',
+        openingElement: {
+          type: 'JSXOpeningElement',
+          name: {
+            type: 'JSXIdentifier',
+            name: 'div',
+            range: [1, 4],
+            loc: {
+              start: {
+                line: 1,
+                column: 1
               },
-              "end": {
-                "line": 1,
-                "column": 4
+              end: {
+                line: 1,
+                column: 4
               }
             }
           },
-          "selfClosing": true,
-          "attributes": [
+          selfClosing: true,
+          attributes: [
             {
-              "type": "JSXSpreadAttribute",
-              "argument": {
-                "type": "Identifier",
-                "name": "props",
-                "range": [
-                  9,
-                  14
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 9
+              type: 'JSXSpreadAttribute',
+              argument: {
+                type: 'Identifier',
+                name: 'props',
+                range: [9, 14],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 9
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 14
+                  end: {
+                    line: 1,
+                    column: 14
                   }
                 }
               },
-              "range": [
-                5,
-                15
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 5
+              range: [5, 15],
+              loc: {
+                start: {
+                  line: 1,
+                  column: 5
                 },
-                "end": {
-                  "line": 1,
-                  "column": 15
+                end: {
+                  line: 1,
+                  column: 15
                 }
               }
             }
           ],
-          "range": [
-            0,
-            18
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 0
+          range: [0, 18],
+          loc: {
+            start: {
+              line: 1,
+              column: 0
             },
-            "end": {
-              "line": 1,
-              "column": 18
+            end: {
+              line: 1,
+              column: 18
             }
           }
         },
         closingElement: null,
-        "children": [],
-        "range": [
-          0,
-          18
-        ],
-        "loc": {
-          "start": {
-            "line": 1,
-            "column": 0
+        children: [],
+        range: [0, 18],
+        loc: {
+          start: {
+            line: 1,
+            column: 0
           },
-          "end": {
-            "line": 1,
-            "column": 18
+          end: {
+            line: 1,
+            column: 18
           }
         }
       },
-      "range": [
-        0,
-        18
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
+      range: [0, 18],
+      loc: {
+        start: {
+          line: 1,
+          column: 0
         },
-        "end": {
-          "line": 1,
-          "column": 18
+        end: {
+          line: 1,
+          column: 18
         }
       }
     },
 
     '<div {...props} post="attribute" />': {
-      "type": "ExpressionStatement",
-      "expression": {
-        "type": "JSXElement",
-        "openingElement": {
-          "type": "JSXOpeningElement",
-          "name": {
-            "type": "JSXIdentifier",
-            "name": "div",
-            "range": [
-              1,
-              4
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 1
+      type: 'ExpressionStatement',
+      expression: {
+        type: 'JSXElement',
+        openingElement: {
+          type: 'JSXOpeningElement',
+          name: {
+            type: 'JSXIdentifier',
+            name: 'div',
+            range: [1, 4],
+            loc: {
+              start: {
+                line: 1,
+                column: 1
               },
-              "end": {
-                "line": 1,
-                "column": 4
+              end: {
+                line: 1,
+                column: 4
               }
             }
           },
-          "selfClosing": true,
-          "attributes": [
+          selfClosing: true,
+          attributes: [
             {
-              "type": "JSXSpreadAttribute",
-              "argument": {
-                "type": "Identifier",
-                "name": "props",
-                "range": [
-                  9,
-                  14
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 9
+              type: 'JSXSpreadAttribute',
+              argument: {
+                type: 'Identifier',
+                name: 'props',
+                range: [9, 14],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 9
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 14
+                  end: {
+                    line: 1,
+                    column: 14
                   }
                 }
               },
-              "range": [
-                5,
-                15
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 5
+              range: [5, 15],
+              loc: {
+                start: {
+                  line: 1,
+                  column: 5
                 },
-                "end": {
-                  "line": 1,
-                  "column": 15
+                end: {
+                  line: 1,
+                  column: 15
                 }
               }
             },
             {
-              "type": "JSXAttribute",
-              "name": {
-                "type": "JSXIdentifier",
-                "name": "post",
-                "range": [
-                  16,
-                  20
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 16
+              type: 'JSXAttribute',
+              name: {
+                type: 'JSXIdentifier',
+                name: 'post',
+                range: [16, 20],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 16
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 20
+                  end: {
+                    line: 1,
+                    column: 20
                   }
                 }
               },
-              "value": {
-                "type": "Literal",
-                "value": "attribute",
-                "raw": "\"attribute\"",
-                "range": [
-                  21,
-                  32
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 21
+              value: {
+                type: 'Literal',
+                value: 'attribute',
+                raw: '"attribute"',
+                range: [21, 32],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 21
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 32
+                  end: {
+                    line: 1,
+                    column: 32
                   }
                 }
               },
-              "range": [
-                16,
-                32
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 16
+              range: [16, 32],
+              loc: {
+                start: {
+                  line: 1,
+                  column: 16
                 },
-                "end": {
-                  "line": 1,
-                  "column": 32
+                end: {
+                  line: 1,
+                  column: 32
                 }
               }
             }
           ],
-          "range": [
-            0,
-            35
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 0
+          range: [0, 35],
+          loc: {
+            start: {
+              line: 1,
+              column: 0
             },
-            "end": {
-              "line": 1,
-              "column": 35
+            end: {
+              line: 1,
+              column: 35
             }
           }
         },
         closingElement: null,
-        "children": [],
-        "range": [
-          0,
-          35
-        ],
-        "loc": {
-          "start": {
-            "line": 1,
-            "column": 0
+        children: [],
+        range: [0, 35],
+        loc: {
+          start: {
+            line: 1,
+            column: 0
           },
-          "end": {
-            "line": 1,
-            "column": 35
+          end: {
+            line: 1,
+            column: 35
           }
         }
       },
-      "range": [
-        0,
-        35
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
+      range: [0, 35],
+      loc: {
+        start: {
+          line: 1,
+          column: 0
         },
-        "end": {
-          "line": 1,
-          "column": 35
+        end: {
+          line: 1,
+          column: 35
         }
       }
     },
 
     '<div pre="leading" pre2="attribute" {...props}></div>': {
-      "type": "ExpressionStatement",
-      "expression": {
-        "type": "JSXElement",
-        "openingElement": {
-          "type": "JSXOpeningElement",
-          "name": {
-            "type": "JSXIdentifier",
-            "name": "div",
-            "range": [
-              1,
-              4
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 1
+      type: 'ExpressionStatement',
+      expression: {
+        type: 'JSXElement',
+        openingElement: {
+          type: 'JSXOpeningElement',
+          name: {
+            type: 'JSXIdentifier',
+            name: 'div',
+            range: [1, 4],
+            loc: {
+              start: {
+                line: 1,
+                column: 1
               },
-              "end": {
-                "line": 1,
-                "column": 4
+              end: {
+                line: 1,
+                column: 4
               }
             }
           },
-          "selfClosing": false,
-          "attributes": [
+          selfClosing: false,
+          attributes: [
             {
-              "type": "JSXAttribute",
-              "name": {
-                "type": "JSXIdentifier",
-                "name": "pre",
-                "range": [
-                  5,
-                  8
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 5
+              type: 'JSXAttribute',
+              name: {
+                type: 'JSXIdentifier',
+                name: 'pre',
+                range: [5, 8],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 5
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 8
+                  end: {
+                    line: 1,
+                    column: 8
                   }
                 }
               },
-              "value": {
-                "type": "Literal",
-                "value": "leading",
-                "raw": "\"leading\"",
-                "range": [
-                  9,
-                  18
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 9
+              value: {
+                type: 'Literal',
+                value: 'leading',
+                raw: '"leading"',
+                range: [9, 18],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 9
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 18
+                  end: {
+                    line: 1,
+                    column: 18
                   }
                 }
               },
-              "range": [
-                5,
-                18
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 5
+              range: [5, 18],
+              loc: {
+                start: {
+                  line: 1,
+                  column: 5
                 },
-                "end": {
-                  "line": 1,
-                  "column": 18
+                end: {
+                  line: 1,
+                  column: 18
                 }
               }
             },
             {
-              "type": "JSXAttribute",
-              "name": {
-                "type": "JSXIdentifier",
-                "name": "pre2",
-                "range": [
-                  19,
-                  23
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 19
+              type: 'JSXAttribute',
+              name: {
+                type: 'JSXIdentifier',
+                name: 'pre2',
+                range: [19, 23],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 19
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 23
+                  end: {
+                    line: 1,
+                    column: 23
                   }
                 }
               },
-              "value": {
-                "type": "Literal",
-                "value": "attribute",
-                "raw": "\"attribute\"",
-                "range": [
-                  24,
-                  35
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 24
+              value: {
+                type: 'Literal',
+                value: 'attribute',
+                raw: '"attribute"',
+                range: [24, 35],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 24
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 35
+                  end: {
+                    line: 1,
+                    column: 35
                   }
                 }
               },
-              "range": [
-                19,
-                35
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 19
+              range: [19, 35],
+              loc: {
+                start: {
+                  line: 1,
+                  column: 19
                 },
-                "end": {
-                  "line": 1,
-                  "column": 35
+                end: {
+                  line: 1,
+                  column: 35
                 }
               }
             },
             {
-              "type": "JSXSpreadAttribute",
-              "argument": {
-                "type": "Identifier",
-                "name": "props",
-                "range": [
-                  40,
-                  45
-                ],
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 40
+              type: 'JSXSpreadAttribute',
+              argument: {
+                type: 'Identifier',
+                name: 'props',
+                range: [40, 45],
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 40
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 45
+                  end: {
+                    line: 1,
+                    column: 45
                   }
                 }
               },
-              "range": [
-                36,
-                46
-              ],
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 36
+              range: [36, 46],
+              loc: {
+                start: {
+                  line: 1,
+                  column: 36
                 },
-                "end": {
-                  "line": 1,
-                  "column": 46
+                end: {
+                  line: 1,
+                  column: 46
                 }
               }
             }
           ],
-          "range": [
-            0,
-            47
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 0
+          range: [0, 47],
+          loc: {
+            start: {
+              line: 1,
+              column: 0
             },
-            "end": {
-              "line": 1,
-              "column": 47
+            end: {
+              line: 1,
+              column: 47
             }
           }
         },
-        "closingElement": {
-          "type": "JSXClosingElement",
-          "name": {
-            "type": "JSXIdentifier",
-            "name": "div",
-            "range": [
-              49,
-              52
-            ],
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 49
+        closingElement: {
+          type: 'JSXClosingElement',
+          name: {
+            type: 'JSXIdentifier',
+            name: 'div',
+            range: [49, 52],
+            loc: {
+              start: {
+                line: 1,
+                column: 49
               },
-              "end": {
-                "line": 1,
-                "column": 52
+              end: {
+                line: 1,
+                column: 52
               }
             }
           },
-          "range": [
-            47,
-            53
-          ],
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 47
+          range: [47, 53],
+          loc: {
+            start: {
+              line: 1,
+              column: 47
             },
-            "end": {
-              "line": 1,
-              "column": 53
+            end: {
+              line: 1,
+              column: 53
             }
           }
         },
-        "children": [],
-        "range": [
-          0,
-          53
-        ],
-        "loc": {
-          "start": {
-            "line": 1,
-            "column": 0
+        children: [],
+        range: [0, 53],
+        loc: {
+          start: {
+            line: 1,
+            column: 0
           },
-          "end": {
-            "line": 1,
-            "column": 53
+          end: {
+            line: 1,
+            column: 53
           }
         }
       },
-      "range": [
-        0,
-        53
-      ],
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
+      range: [0, 53],
+      loc: {
+        start: {
+          line: 1,
+          column: 0
         },
-        "end": {
-          "line": 1,
-          "column": 53
+        end: {
+          line: 1,
+          column: 53
         }
       }
     },
 
     '<A aa={aa.bb.cc} bb={bb.cc.dd}><div>{aa.b}</div></A>': {
-      "type": "ExpressionStatement",
-      "start": 0,
-      "end": 52,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 0
+      type: 'ExpressionStatement',
+      start: 0,
+      end: 52,
+      loc: {
+        start: {
+          line: 1,
+          column: 0
         },
-        "end": {
-          "line": 1,
-          "column": 52
+        end: {
+          line: 1,
+          column: 52
         }
       },
-      "range": [
-        0,
-        52
-      ],
-      "expression": {
-        "type": "JSXElement",
-        "start": 0,
-        "end": 52,
-        "loc": {
-          "start": {
-            "line": 1,
-            "column": 0
+      range: [0, 52],
+      expression: {
+        type: 'JSXElement',
+        start: 0,
+        end: 52,
+        loc: {
+          start: {
+            line: 1,
+            column: 0
           },
-          "end": {
-            "line": 1,
-            "column": 52
+          end: {
+            line: 1,
+            column: 52
           }
         },
-        "range": [
-          0,
-          52
-        ],
-        "openingElement": {
-          "type": "JSXOpeningElement",
-          "start": 0,
-          "end": 31,
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 0
+        range: [0, 52],
+        openingElement: {
+          type: 'JSXOpeningElement',
+          start: 0,
+          end: 31,
+          loc: {
+            start: {
+              line: 1,
+              column: 0
             },
-            "end": {
-              "line": 1,
-              "column": 31
+            end: {
+              line: 1,
+              column: 31
             }
           },
-          "range": [
-            0,
-            31
-          ],
-          "attributes": [
+          range: [0, 31],
+          attributes: [
             {
-              "type": "JSXAttribute",
-              "start": 3,
-              "end": 16,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 3
+              type: 'JSXAttribute',
+              start: 3,
+              end: 16,
+              loc: {
+                start: {
+                  line: 1,
+                  column: 3
                 },
-                "end": {
-                  "line": 1,
-                  "column": 16
+                end: {
+                  line: 1,
+                  column: 16
                 }
               },
-              "range": [
-                3,
-                16
-              ],
-              "name": {
-                "type": "JSXIdentifier",
-                "start": 3,
-                "end": 5,
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 3
+              range: [3, 16],
+              name: {
+                type: 'JSXIdentifier',
+                start: 3,
+                end: 5,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 3
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 5
+                  end: {
+                    line: 1,
+                    column: 5
                   }
                 },
-                "range": [
-                  3,
-                  5
-                ],
-                "name": "aa"
+                range: [3, 5],
+                name: 'aa'
               },
-              "value": {
-                "type": "JSXExpressionContainer",
-                "start": 6,
-                "end": 16,
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 6
+              value: {
+                type: 'JSXExpressionContainer',
+                start: 6,
+                end: 16,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 6
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 16
+                  end: {
+                    line: 1,
+                    column: 16
                   }
                 },
-                "range": [
-                  6,
-                  16
-                ],
-                "expression": {
-                  "type": "MemberExpression",
-                  "start": 7,
-                  "end": 15,
-                  "loc": {
-                    "start": {
-                      "line": 1,
-                      "column": 7
+                range: [6, 16],
+                expression: {
+                  type: 'MemberExpression',
+                  start: 7,
+                  end: 15,
+                  loc: {
+                    start: {
+                      line: 1,
+                      column: 7
                     },
-                    "end": {
-                      "line": 1,
-                      "column": 15
+                    end: {
+                      line: 1,
+                      column: 15
                     }
                   },
-                  "range": [
-                    7,
-                    15
-                  ],
-                  "object": {
-                    "type": "MemberExpression",
-                    "start": 7,
-                    "end": 12,
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 7
+                  range: [7, 15],
+                  object: {
+                    type: 'MemberExpression',
+                    start: 7,
+                    end: 12,
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 7
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 12
+                      end: {
+                        line: 1,
+                        column: 12
                       }
                     },
-                    "range": [
-                      7,
-                      12
-                    ],
-                    "object": {
-                      "type": "Identifier",
-                      "start": 7,
-                      "end": 9,
-                      "loc": {
-                        "start": {
-                          "line": 1,
-                          "column": 7
+                    range: [7, 12],
+                    object: {
+                      type: 'Identifier',
+                      start: 7,
+                      end: 9,
+                      loc: {
+                        start: {
+                          line: 1,
+                          column: 7
                         },
-                        "end": {
-                          "line": 1,
-                          "column": 9
+                        end: {
+                          line: 1,
+                          column: 9
                         }
                       },
-                      "range": [
-                        7,
-                        9
-                      ],
-                      "name": "aa"
+                      range: [7, 9],
+                      name: 'aa'
                     },
-                    "property": {
-                      "type": "Identifier",
-                      "start": 10,
-                      "end": 12,
-                      "loc": {
-                        "start": {
-                          "line": 1,
-                          "column": 10
+                    property: {
+                      type: 'Identifier',
+                      start: 10,
+                      end: 12,
+                      loc: {
+                        start: {
+                          line: 1,
+                          column: 10
                         },
-                        "end": {
-                          "line": 1,
-                          "column": 12
+                        end: {
+                          line: 1,
+                          column: 12
                         }
                       },
-                      "range": [
-                        10,
-                        12
-                      ],
-                      "name": "bb"
+                      range: [10, 12],
+                      name: 'bb'
                     },
-                    "computed": false
+                    computed: false
                   },
-                  "property": {
-                    "type": "Identifier",
-                    "start": 13,
-                    "end": 15,
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 13
+                  property: {
+                    type: 'Identifier',
+                    start: 13,
+                    end: 15,
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 13
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 15
+                      end: {
+                        line: 1,
+                        column: 15
                       }
                     },
-                    "range": [
-                      13,
-                      15
-                    ],
-                    "name": "cc"
+                    range: [13, 15],
+                    name: 'cc'
                   },
-                  "computed": false
+                  computed: false
                 }
               }
             },
             {
-              "type": "JSXAttribute",
-              "start": 17,
-              "end": 30,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 17
+              type: 'JSXAttribute',
+              start: 17,
+              end: 30,
+              loc: {
+                start: {
+                  line: 1,
+                  column: 17
                 },
-                "end": {
-                  "line": 1,
-                  "column": 30
+                end: {
+                  line: 1,
+                  column: 30
                 }
               },
-              "range": [
-                17,
-                30
-              ],
-              "name": {
-                "type": "JSXIdentifier",
-                "start": 17,
-                "end": 19,
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 17
+              range: [17, 30],
+              name: {
+                type: 'JSXIdentifier',
+                start: 17,
+                end: 19,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 17
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 19
+                  end: {
+                    line: 1,
+                    column: 19
                   }
                 },
-                "range": [
-                  17,
-                  19
-                ],
-                "name": "bb"
+                range: [17, 19],
+                name: 'bb'
               },
-              "value": {
-                "type": "JSXExpressionContainer",
-                "start": 20,
-                "end": 30,
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 20
+              value: {
+                type: 'JSXExpressionContainer',
+                start: 20,
+                end: 30,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 20
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 30
+                  end: {
+                    line: 1,
+                    column: 30
                   }
                 },
-                "range": [
-                  20,
-                  30
-                ],
-                "expression": {
-                  "type": "MemberExpression",
-                  "start": 21,
-                  "end": 29,
-                  "loc": {
-                    "start": {
-                      "line": 1,
-                      "column": 21
+                range: [20, 30],
+                expression: {
+                  type: 'MemberExpression',
+                  start: 21,
+                  end: 29,
+                  loc: {
+                    start: {
+                      line: 1,
+                      column: 21
                     },
-                    "end": {
-                      "line": 1,
-                      "column": 29
+                    end: {
+                      line: 1,
+                      column: 29
                     }
                   },
-                  "range": [
-                    21,
-                    29
-                  ],
-                  "object": {
-                    "type": "MemberExpression",
-                    "start": 21,
-                    "end": 26,
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 21
+                  range: [21, 29],
+                  object: {
+                    type: 'MemberExpression',
+                    start: 21,
+                    end: 26,
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 21
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 26
+                      end: {
+                        line: 1,
+                        column: 26
                       }
                     },
-                    "range": [
-                      21,
-                      26
-                    ],
-                    "object": {
-                      "type": "Identifier",
-                      "start": 21,
-                      "end": 23,
-                      "loc": {
-                        "start": {
-                          "line": 1,
-                          "column": 21
+                    range: [21, 26],
+                    object: {
+                      type: 'Identifier',
+                      start: 21,
+                      end: 23,
+                      loc: {
+                        start: {
+                          line: 1,
+                          column: 21
                         },
-                        "end": {
-                          "line": 1,
-                          "column": 23
+                        end: {
+                          line: 1,
+                          column: 23
                         }
                       },
-                      "range": [
-                        21,
-                        23
-                      ],
-                      "name": "bb"
+                      range: [21, 23],
+                      name: 'bb'
                     },
-                    "property": {
-                      "type": "Identifier",
-                      "start": 24,
-                      "end": 26,
-                      "loc": {
-                        "start": {
-                          "line": 1,
-                          "column": 24
+                    property: {
+                      type: 'Identifier',
+                      start: 24,
+                      end: 26,
+                      loc: {
+                        start: {
+                          line: 1,
+                          column: 24
                         },
-                        "end": {
-                          "line": 1,
-                          "column": 26
+                        end: {
+                          line: 1,
+                          column: 26
                         }
                       },
-                      "range": [
-                        24,
-                        26
-                      ],
-                      "name": "cc"
+                      range: [24, 26],
+                      name: 'cc'
                     },
-                    "computed": false
+                    computed: false
                   },
-                  "property": {
-                    "type": "Identifier",
-                    "start": 27,
-                    "end": 29,
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 27
+                  property: {
+                    type: 'Identifier',
+                    start: 27,
+                    end: 29,
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 27
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 29
+                      end: {
+                        line: 1,
+                        column: 29
                       }
                     },
-                    "range": [
-                      27,
-                      29
-                    ],
-                    "name": "dd"
+                    range: [27, 29],
+                    name: 'dd'
                   },
-                  "computed": false
+                  computed: false
                 }
               }
             }
           ],
-          "name": {
-            "type": "JSXIdentifier",
-            "start": 1,
-            "end": 2,
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 1
+          name: {
+            type: 'JSXIdentifier',
+            start: 1,
+            end: 2,
+            loc: {
+              start: {
+                line: 1,
+                column: 1
               },
-              "end": {
-                "line": 1,
-                "column": 2
+              end: {
+                line: 1,
+                column: 2
               }
             },
-            "range": [
-              1,
-              2
-            ],
-            "name": "A"
+            range: [1, 2],
+            name: 'A'
           },
-          "selfClosing": false
+          selfClosing: false
         },
-        "closingElement": {
-          "type": "JSXClosingElement",
-          "start": 48,
-          "end": 52,
-          "loc": {
-            "start": {
-              "line": 1,
-              "column": 48
+        closingElement: {
+          type: 'JSXClosingElement',
+          start: 48,
+          end: 52,
+          loc: {
+            start: {
+              line: 1,
+              column: 48
             },
-            "end": {
-              "line": 1,
-              "column": 52
+            end: {
+              line: 1,
+              column: 52
             }
           },
-          "range": [
-            48,
-            52
-          ],
-          "name": {
-            "type": "JSXIdentifier",
-            "start": 50,
-            "end": 51,
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 50
+          range: [48, 52],
+          name: {
+            type: 'JSXIdentifier',
+            start: 50,
+            end: 51,
+            loc: {
+              start: {
+                line: 1,
+                column: 50
               },
-              "end": {
-                "line": 1,
-                "column": 51
+              end: {
+                line: 1,
+                column: 51
               }
             },
-            "range": [
-              50,
-              51
-            ],
-            "name": "A"
+            range: [50, 51],
+            name: 'A'
           }
         },
-        "children": [
+        children: [
           {
-            "type": "JSXElement",
-            "start": 31,
-            "end": 48,
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 31
+            type: 'JSXElement',
+            start: 31,
+            end: 48,
+            loc: {
+              start: {
+                line: 1,
+                column: 31
               },
-              "end": {
-                "line": 1,
-                "column": 48
+              end: {
+                line: 1,
+                column: 48
               }
             },
-            "range": [
-              31,
-              48
-            ],
-            "openingElement": {
-              "type": "JSXOpeningElement",
-              "start": 31,
-              "end": 36,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 31
+            range: [31, 48],
+            openingElement: {
+              type: 'JSXOpeningElement',
+              start: 31,
+              end: 36,
+              loc: {
+                start: {
+                  line: 1,
+                  column: 31
                 },
-                "end": {
-                  "line": 1,
-                  "column": 36
+                end: {
+                  line: 1,
+                  column: 36
                 }
               },
-              "range": [
-                31,
-                36
-              ],
-              "attributes": [],
-              "name": {
-                "type": "JSXIdentifier",
-                "start": 32,
-                "end": 35,
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 32
+              range: [31, 36],
+              attributes: [],
+              name: {
+                type: 'JSXIdentifier',
+                start: 32,
+                end: 35,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 32
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 35
+                  end: {
+                    line: 1,
+                    column: 35
                   }
                 },
-                "range": [
-                  32,
-                  35
-                ],
-                "name": "div"
+                range: [32, 35],
+                name: 'div'
               },
-              "selfClosing": false
+              selfClosing: false
             },
-            "closingElement": {
-              "type": "JSXClosingElement",
-              "start": 42,
-              "end": 48,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 42
+            closingElement: {
+              type: 'JSXClosingElement',
+              start: 42,
+              end: 48,
+              loc: {
+                start: {
+                  line: 1,
+                  column: 42
                 },
-                "end": {
-                  "line": 1,
-                  "column": 48
+                end: {
+                  line: 1,
+                  column: 48
                 }
               },
-              "range": [
-                42,
-                48
-              ],
-              "name": {
-                "type": "JSXIdentifier",
-                "start": 44,
-                "end": 47,
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 44
+              range: [42, 48],
+              name: {
+                type: 'JSXIdentifier',
+                start: 44,
+                end: 47,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 44
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 47
+                  end: {
+                    line: 1,
+                    column: 47
                   }
                 },
-                "range": [
-                  44,
-                  47
-                ],
-                "name": "div"
+                range: [44, 47],
+                name: 'div'
               }
             },
-            "children": [
+            children: [
               {
-                "type": "JSXExpressionContainer",
-                "start": 36,
-                "end": 42,
-                "loc": {
-                  "start": {
-                    "line": 1,
-                    "column": 36
+                type: 'JSXExpressionContainer',
+                start: 36,
+                end: 42,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 36
                   },
-                  "end": {
-                    "line": 1,
-                    "column": 42
+                  end: {
+                    line: 1,
+                    column: 42
                   }
                 },
-                "range": [
-                  36,
-                  42
-                ],
-                "expression": {
-                  "type": "MemberExpression",
-                  "start": 37,
-                  "end": 41,
-                  "loc": {
-                    "start": {
-                      "line": 1,
-                      "column": 37
+                range: [36, 42],
+                expression: {
+                  type: 'MemberExpression',
+                  start: 37,
+                  end: 41,
+                  loc: {
+                    start: {
+                      line: 1,
+                      column: 37
                     },
-                    "end": {
-                      "line": 1,
-                      "column": 41
+                    end: {
+                      line: 1,
+                      column: 41
                     }
                   },
-                  "range": [
-                    37,
-                    41
-                  ],
-                  "object": {
-                    "type": "Identifier",
-                    "start": 37,
-                    "end": 39,
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 37
+                  range: [37, 41],
+                  object: {
+                    type: 'Identifier',
+                    start: 37,
+                    end: 39,
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 37
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 39
+                      end: {
+                        line: 1,
+                        column: 39
                       }
                     },
-                    "range": [
-                      37,
-                      39
-                    ],
-                    "name": "aa"
+                    range: [37, 39],
+                    name: 'aa'
                   },
-                  "property": {
-                    "type": "Identifier",
-                    "start": 40,
-                    "end": 41,
-                    "loc": {
-                      "start": {
-                        "line": 1,
-                        "column": 40
+                  property: {
+                    type: 'Identifier',
+                    start: 40,
+                    end: 41,
+                    loc: {
+                      start: {
+                        line: 1,
+                        column: 40
                       },
-                      "end": {
-                        "line": 1,
-                        "column": 41
+                      end: {
+                        line: 1,
+                        column: 41
                       }
                     },
-                    "range": [
-                      40,
-                      41
-                    ],
-                    "name": "b"
+                    range: [40, 41],
+                    name: 'b'
                   },
-                  "computed": false
+                  computed: false
                 }
               }
             ]
@@ -3249,25 +2903,11 @@ var fbTestFixture = {
           },
           range: [13, 16]
         },
-        children: [{
-          type: 'JSXElement',
-          start: 2,
-          end: 13,
-          loc: {
-            start: {
-              line: 1,
-              column: 2
-            },
-            end: {
-              line: 1,
-              column: 13
-            }
-          },
-          range: [2, 13],
-          openingElement: {
-            type: 'JSXOpeningElement',
+        children: [
+          {
+            type: 'JSXElement',
             start: 2,
-            end: 7,
+            end: 13,
             loc: {
               start: {
                 line: 1,
@@ -3275,168 +2915,188 @@ var fbTestFixture = {
               },
               end: {
                 line: 1,
-                column: 7
-              }
-            },
-            range: [2, 7],
-            attributes: [],
-            name: {
-              type: 'JSXIdentifier',
-              start: 3,
-              end: 6,
-              loc: {
-                start: {
-                  line: 1,
-                  column: 3
-                },
-                end: {
-                  line: 1,
-                  column: 6
-                }
-              },
-              range: [3, 6],
-              name: 'div'
-            },
-            selfClosing: false
-          },
-          closingElement: {
-            type: 'JSXClosingElement',
-            start: 7,
-            end: 13,
-            loc: {
-              start: {
-                line: 1,
-                column: 7
-              },
-              end: {
-                line: 1,
                 column: 13
               }
             },
-            range: [7, 13],
-            name: {
-              type: 'JSXIdentifier',
-              start: 9,
-              end: 12,
+            range: [2, 13],
+            openingElement: {
+              type: 'JSXOpeningElement',
+              start: 2,
+              end: 7,
               loc: {
                 start: {
                   line: 1,
-                  column: 9
+                  column: 2
                 },
                 end: {
                   line: 1,
-                  column: 12
+                  column: 7
                 }
               },
-              range: [9, 12],
-              name: 'div'
-            }
-          },
-          children: []
-        }]
-      }
-    }
-  },
-  'Regression': {
-    '<p>foo <a href="test"> bar</a> baz</p> ;': {
-      type: "ExpressionStatement",
-      start: 0,
-      end: 40,
-      expression: {
-        type: "JSXElement",
-        start: 0,
-        end: 38,
-        openingElement: {
-          type: "JSXOpeningElement",
-          start: 0,
-          end: 3,
-          attributes: [],
-          name: {
-            type: "JSXIdentifier",
-            start: 1,
-            end: 2,
-            name: "p"
-          },
-          selfClosing: false
-        },
-        closingElement: {
-          type: "JSXClosingElement",
-          start: 34,
-          end: 38,
-          name: {
-            type: "JSXIdentifier",
-            start: 36,
-            end: 37,
-            name: "p"
-          }
-        },
-        children: [
-          {
-            type: "JSXText",
-            start: 3,
-            end: 7,
-            value: "foo ",
-            raw: "foo "
-          },
-          {
-            type: "JSXElement",
-            start: 7,
-            end: 30,
-            openingElement: {
-              type: "JSXOpeningElement",
-              start: 7,
-              end: 22,
-              attributes: [{
-                type: "JSXAttribute",
-                start: 10,
-                end: 21,
-                name: {
-                  type: "JSXIdentifier",
-                  start: 10,
-                  end: 14,
-                  name: "href"
-                },
-                value: {
-                  type: "Literal",
-                  start: 15,
-                  end: 21,
-                  value: "test",
-                  raw: "\"test\""
-                }
-              }],
+              range: [2, 7],
+              attributes: [],
               name: {
-                type: "JSXIdentifier",
-                start: 8,
-                end: 9,
-                name: "a"
+                type: 'JSXIdentifier',
+                start: 3,
+                end: 6,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 3
+                  },
+                  end: {
+                    line: 1,
+                    column: 6
+                  }
+                },
+                range: [3, 6],
+                name: 'div'
               },
               selfClosing: false
             },
             closingElement: {
-              type: "JSXClosingElement",
+              type: 'JSXClosingElement',
+              start: 7,
+              end: 13,
+              loc: {
+                start: {
+                  line: 1,
+                  column: 7
+                },
+                end: {
+                  line: 1,
+                  column: 13
+                }
+              },
+              range: [7, 13],
+              name: {
+                type: 'JSXIdentifier',
+                start: 9,
+                end: 12,
+                loc: {
+                  start: {
+                    line: 1,
+                    column: 9
+                  },
+                  end: {
+                    line: 1,
+                    column: 12
+                  }
+                },
+                range: [9, 12],
+                name: 'div'
+              }
+            },
+            children: []
+          }
+        ]
+      }
+    }
+  },
+  Regression: {
+    '<p>foo <a href="test"> bar</a> baz</p> ;': {
+      type: 'ExpressionStatement',
+      start: 0,
+      end: 40,
+      expression: {
+        type: 'JSXElement',
+        start: 0,
+        end: 38,
+        openingElement: {
+          type: 'JSXOpeningElement',
+          start: 0,
+          end: 3,
+          attributes: [],
+          name: {
+            type: 'JSXIdentifier',
+            start: 1,
+            end: 2,
+            name: 'p'
+          },
+          selfClosing: false
+        },
+        closingElement: {
+          type: 'JSXClosingElement',
+          start: 34,
+          end: 38,
+          name: {
+            type: 'JSXIdentifier',
+            start: 36,
+            end: 37,
+            name: 'p'
+          }
+        },
+        children: [
+          {
+            type: 'JSXText',
+            start: 3,
+            end: 7,
+            value: 'foo ',
+            raw: 'foo '
+          },
+          {
+            type: 'JSXElement',
+            start: 7,
+            end: 30,
+            openingElement: {
+              type: 'JSXOpeningElement',
+              start: 7,
+              end: 22,
+              attributes: [
+                {
+                  type: 'JSXAttribute',
+                  start: 10,
+                  end: 21,
+                  name: {
+                    type: 'JSXIdentifier',
+                    start: 10,
+                    end: 14,
+                    name: 'href'
+                  },
+                  value: {
+                    type: 'Literal',
+                    start: 15,
+                    end: 21,
+                    value: 'test',
+                    raw: '"test"'
+                  }
+                }
+              ],
+              name: {
+                type: 'JSXIdentifier',
+                start: 8,
+                end: 9,
+                name: 'a'
+              },
+              selfClosing: false
+            },
+            closingElement: {
+              type: 'JSXClosingElement',
               start: 26,
               end: 30,
               name: {
-                type: "JSXIdentifier",
+                type: 'JSXIdentifier',
                 start: 28,
                 end: 29,
-                name: "a"
+                name: 'a'
               }
             },
-            children: [{
-              type: "JSXText",
-              start: 22,
-              end: 26,
-              value: " bar",
-              raw: " bar"
-            }]
+            children: [
+              {
+                type: 'JSXText',
+                start: 22,
+                end: 26,
+                value: ' bar',
+                raw: ' bar'
+              }
+            ]
           },
           {
-            type: "JSXText",
+            type: 'JSXText',
             start: 30,
             end: 34,
-            value: " baz",
-            raw: " baz"
+            value: ' baz',
+            raw: ' baz'
           }
         ]
       }
@@ -3474,187 +3134,196 @@ var fbTestFixture = {
             name: 'div'
           }
         },
-        children: [{
-          type: 'JSXExpressionContainer',
-          start: 5,
-          end: 24,
-          expression: {
-            type: 'JSXElement',
-            start: 6,
-            end: 23,
-            openingElement: {
-              type: 'JSXOpeningElement',
+        children: [
+          {
+            type: 'JSXExpressionContainer',
+            start: 5,
+            end: 24,
+            expression: {
+              type: 'JSXElement',
               start: 6,
               end: 23,
-              attributes: [
-                {
-                  type: 'JSXSpreadAttribute',
-                  start: 11,
-                  end: 20,
-                  argument: {
-                    type: 'Identifier',
-                    start: 15,
-                    end: 19,
-                    name: 'test'
+              openingElement: {
+                type: 'JSXOpeningElement',
+                start: 6,
+                end: 23,
+                attributes: [
+                  {
+                    type: 'JSXSpreadAttribute',
+                    start: 11,
+                    end: 20,
+                    argument: {
+                      type: 'Identifier',
+                      start: 15,
+                      end: 19,
+                      name: 'test'
+                    }
                   }
-                }
-              ],
-              name: {
-                type: 'JSXIdentifier',
-                start: 7,
-                end: 10,
-                name: 'div'
+                ],
+                name: {
+                  type: 'JSXIdentifier',
+                  start: 7,
+                  end: 10,
+                  name: 'div'
+                },
+                selfClosing: true
               },
-              selfClosing: true
-            },
-            closingElement: null,
-            children: []
+              closingElement: null,
+              children: []
+            }
           }
-        }]
+        ]
       }
     },
 
     '<div>{ {a} }</div>': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       start: 0,
       end: 18,
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         start: 0,
         end: 18,
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           start: 0,
           end: 5,
           attributes: [],
           name: {
-            type: "JSXIdentifier",
+            type: 'JSXIdentifier',
             start: 1,
             end: 4,
-            name: "div"
+            name: 'div'
           },
           selfClosing: false
         },
         closingElement: {
-          type: "JSXClosingElement",
+          type: 'JSXClosingElement',
           start: 12,
           end: 18,
           name: {
-            type: "JSXIdentifier",
+            type: 'JSXIdentifier',
             start: 14,
             end: 17,
-            name: "div"
+            name: 'div'
           }
         },
-        children: [{
-          type: "JSXExpressionContainer",
-          start: 5,
-          end: 12,
-          expression: {
-            type: "ObjectExpression",
-            start: 7,
-            end: 10,
-            properties: [{
-              type: "Property",
-              start: 8,
-              end: 9,
-              method: false,
-              shorthand: true,
-              computed: false,
-              key: {
-                type: "Identifier",
-                start: 8,
-                end: 9,
-                name: "a"
-              },
-              kind: "init",
-              value: {
-                type: "Identifier",
-                start: 8,
-                end: 9,
-                name: "a"
-              }
-            }]
+        children: [
+          {
+            type: 'JSXExpressionContainer',
+            start: 5,
+            end: 12,
+            expression: {
+              type: 'ObjectExpression',
+              start: 7,
+              end: 10,
+              properties: [
+                {
+                  type: 'Property',
+                  start: 8,
+                  end: 9,
+                  method: false,
+                  shorthand: true,
+                  computed: false,
+                  key: {
+                    type: 'Identifier',
+                    start: 8,
+                    end: 9,
+                    name: 'a'
+                  },
+                  kind: 'init',
+                  value: {
+                    type: 'Identifier',
+                    start: 8,
+                    end: 9,
+                    name: 'a'
+                  }
+                }
+              ]
+            }
           }
-        }]
+        ]
       }
     },
 
     '<div>/text</div>': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       start: 0,
       end: 16,
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         start: 0,
         end: 16,
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           start: 0,
           end: 5,
           attributes: [],
           name: {
-            type: "JSXIdentifier",
+            type: 'JSXIdentifier',
             start: 1,
             end: 4,
-            name: "div"
+            name: 'div'
           },
           selfClosing: false
         },
         closingElement: {
-          type: "JSXClosingElement",
+          type: 'JSXClosingElement',
           start: 10,
           end: 16,
           name: {
-            type: "JSXIdentifier",
+            type: 'JSXIdentifier',
             start: 12,
             end: 15,
-            name: "div"
+            name: 'div'
           }
         },
-        children: [{
-          type: "JSXText",
-          start: 5,
-          end: 10,
-          value: "/text",
-          raw: "/text"
-        }]
+        children: [
+          {
+            type: 'JSXText',
+            start: 5,
+            end: 10,
+            value: '/text',
+            raw: '/text'
+          }
+        ]
       }
     },
 
     '<div>{a}{b}</div>': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       start: 0,
       end: 17,
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         start: 0,
         end: 17,
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           start: 0,
           end: 5,
           attributes: [],
           name: {
-            type: "JSXIdentifier",
+            type: 'JSXIdentifier',
             start: 1,
             end: 4,
-            name: "div"
+            name: 'div'
           },
           selfClosing: false
         },
         closingElement: {
-          type: "JSXClosingElement",
+          type: 'JSXClosingElement',
           start: 11,
           end: 17,
           name: {
-            type: "JSXIdentifier",
+            type: 'JSXIdentifier',
             start: 13,
             end: 16,
-            name: "div"
+            name: 'div'
           }
         },
-        children: [{
+        children: [
+          {
             type: 'JSXExpressionContainer',
             expression: {
               type: 'Identifier',
@@ -3682,7 +3351,8 @@ var fbTestFixture = {
                 column: 8
               }
             }
-          }, {
+          },
+          {
             type: 'JSXExpressionContainer',
             expression: {
               type: 'Identifier',
@@ -3716,43 +3386,43 @@ var fbTestFixture = {
     },
 
     '<div pre="leading" {...props} />': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       range: [0, 32],
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         range: [0, 32],
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           range: [0, 32],
           attributes: [
             {
-              type: "JSXAttribute",
+              type: 'JSXAttribute',
               range: [5, 18],
               name: {
-                type: "JSXIdentifier",
+                type: 'JSXIdentifier',
                 range: [5, 8],
-                name: "pre"
+                name: 'pre'
               },
               value: {
-                type: "Literal",
+                type: 'Literal',
                 range: [9, 18],
-                value: "leading"
+                value: 'leading'
               }
             },
             {
-              type: "JSXSpreadAttribute",
+              type: 'JSXSpreadAttribute',
               range: [19, 29],
               argument: {
-                type: "Identifier",
+                type: 'Identifier',
                 range: [23, 28],
-                name: "props"
+                name: 'props'
               }
             }
           ],
           name: {
-            type: "JSXIdentifier",
+            type: 'JSXIdentifier',
             range: [1, 4],
-            name: "div"
+            name: 'div'
           },
           selfClosing: true
         },
@@ -3761,38 +3431,40 @@ var fbTestFixture = {
       }
     },
     '<path d="M230 80\n\t\tA 45 45, 0, 1, 0, 275 125 \r\n    L 275 80 Z"/>': {
-      type: "ExpressionStatement",
+      type: 'ExpressionStatement',
       expression: {
-        type: "JSXElement",
+        type: 'JSXElement',
         range: [0, 64],
         openingElement: {
-          type: "JSXOpeningElement",
+          type: 'JSXOpeningElement',
           range: [0, 64],
           attributes: [
             {
-              type: "JSXAttribute",
+              type: 'JSXAttribute',
               range: [6, 62],
               name: {
-                type: "JSXIdentifier",
+                type: 'JSXIdentifier',
                 range: [6, 7],
-                name: "d"
+                name: 'd'
               },
               value: {
-                type: "Literal",
+                type: 'Literal',
                 loc: {
                   start: { line: 1, column: 8 },
                   end: { line: 3, column: 15 }
                 },
                 range: [8, 62],
-                value: "M230 80\n\t\tA 45 45, 0, 1, 0, 275 125 \r\n    L 275 80 Z",
-                raw: "\"M230 80\n\t\tA 45 45, 0, 1, 0, 275 125 \r\n    L 275 80 Z\""
+                value:
+                  'M230 80\n\t\tA 45 45, 0, 1, 0, 275 125 \r\n    L 275 80 Z',
+                raw:
+                  '"M230 80\n\t\tA 45 45, 0, 1, 0, 275 125 \r\n    L 275 80 Z"'
               }
             }
           ],
           name: {
-            type: "JSXIdentifier",
+            type: 'JSXIdentifier',
             range: [1, 5],
-            name: "path"
+            name: 'path'
           },
           selfClosing: true
         },
@@ -3803,64 +3475,73 @@ var fbTestFixture = {
   }
 };
 
-if (typeof exports !== "undefined") {
-  var test = require("./driver.js").test;
-  var testFail = require("./driver.js").testFail;
-  var tokTypes = require("../").tokTypes;
+if (typeof exports !== 'undefined') {
+  var test = require('./driver.js').test;
+  var testFail = require('./driver.js').testFail;
+  var tokTypes = require('../').tokTypes;
 }
 
-testFail("var x = <div>one</div><div>two</div>;", "Adjacent JSX elements must be wrapped in an enclosing tag (1:22)");
+testFail(
+  'var x = <div>one</div><div>two</div>;',
+  'Adjacent JSX elements must be wrapped in an enclosing tag (1:22)'
+);
 
-testFail("<a:b.c />", "Unexpected token (1:4)");
+testFail('<a:b.c />', 'Unexpected token (1:4)');
 
-test("<a:b.c />", {
-  type: "Program",
-  range: [0, 9],
-  body: [{
-    type: "ExpressionStatement",
+test(
+  '<a:b.c />',
+  {
+    type: 'Program',
     range: [0, 9],
-    expression: {
-      type: "JSXElement",
-      range: [0, 9],
-      openingElement: {
-        type: "JSXOpeningElement",
+    body: [
+      {
+        type: 'ExpressionStatement',
         range: [0, 9],
-        attributes: [],
-        name: {
-          type: "JSXMemberExpression",
-          range: [1, 6],
-          object: {
-            type: "JSXNamespacedName",
-            range: [1, 4],
-            namespace: {
-              type: "JSXIdentifier",
-              range: [1, 2],
-              name: "a"
-            },
+        expression: {
+          type: 'JSXElement',
+          range: [0, 9],
+          openingElement: {
+            type: 'JSXOpeningElement',
+            range: [0, 9],
+            attributes: [],
             name: {
-              type: "JSXIdentifier",
-              range: [3, 4],
-              name: "b"
-            }
+              type: 'JSXMemberExpression',
+              range: [1, 6],
+              object: {
+                type: 'JSXNamespacedName',
+                range: [1, 4],
+                namespace: {
+                  type: 'JSXIdentifier',
+                  range: [1, 2],
+                  name: 'a'
+                },
+                name: {
+                  type: 'JSXIdentifier',
+                  range: [3, 4],
+                  name: 'b'
+                }
+              },
+              property: {
+                type: 'JSXIdentifier',
+                range: [5, 6],
+                name: 'c'
+              }
+            },
+            selfClosing: true
           },
-          property: {
-            type: "JSXIdentifier",
-            range: [5, 6],
-            name: "c"
-          }
-        },
-        selfClosing: true
-      },
-      closingElement: null,
-      children: []
+          closingElement: null,
+          children: []
+        }
+      }
+    ]
+  },
+  {
+    ranges: true,
+    plugins: {
+      jsx: { allowNamespacedObjects: true }
     }
-  }]
-}, {
-  ranges: true,
-  plugins: {
-    jsx: { allowNamespacedObjects: true }
   }
-});
+);
 
 testFail('<ns:div />', 'Unexpected token (1:3)', {
   plugins: {
@@ -3874,91 +3555,105 @@ testFail('<div ns:attr />', 'Unexpected token (1:7)', {
   }
 });
 
-test('<a>{/* foo */}</a>', {}, {
-  onToken: [
-    {
-      type: tokTypes.jsxTagStart,
-      value: undefined,
-      start: 0,
-      end: 1
-    },
-    {
-      type: tokTypes.jsxName,
-      value: 'a',
-      start: 1,
-      end: 2
-    },
-    {
-      type: tokTypes.jsxTagEnd,
-      value: undefined,
-      start: 2,
-      end: 3
-    },
-    {
-      type: tokTypes.braceL,
-      value: undefined,
-      start: 3,
-      end: 4
-    },
-    {
-      type: tokTypes.braceR,
-      value: undefined,
-      start: 13,
-      end: 14
-    },
-    {
-      type: tokTypes.jsxTagStart,
-      value: undefined,
-      start: 14,
-      end: 15
-    },
-    {
-      type: tokTypes.slash,
-      value: '/',
-      start: 15,
-      end: 16
-    },
-    {
-      type: tokTypes.jsxName,
-      value: 'a',
-      start: 16,
-      end: 17
-    },
-    {
-      type: tokTypes.jsxTagEnd,
-      value: undefined,
-      start: 17,
-      end: 18
-    },
-    {
-      type: tokTypes.eof,
-      value: undefined,
-      start: 18,
-      end: 18
-    }
-  ]
-});
+test(
+  '<a>{/* foo */}</a>',
+  {},
+  {
+    onToken: [
+      {
+        type: tokTypes.jsxTagStart,
+        value: undefined,
+        start: 0,
+        end: 1
+      },
+      {
+        type: tokTypes.jsxName,
+        value: 'a',
+        start: 1,
+        end: 2
+      },
+      {
+        type: tokTypes.jsxTagEnd,
+        value: undefined,
+        start: 2,
+        end: 3
+      },
+      {
+        type: tokTypes.braceL,
+        value: undefined,
+        start: 3,
+        end: 4
+      },
+      {
+        type: tokTypes.braceR,
+        value: undefined,
+        start: 13,
+        end: 14
+      },
+      {
+        type: tokTypes.jsxTagStart,
+        value: undefined,
+        start: 14,
+        end: 15
+      },
+      {
+        type: tokTypes.slash,
+        value: '/',
+        start: 15,
+        end: 16
+      },
+      {
+        type: tokTypes.jsxName,
+        value: 'a',
+        start: 16,
+        end: 17
+      },
+      {
+        type: tokTypes.jsxTagEnd,
+        value: undefined,
+        start: 17,
+        end: 18
+      },
+      {
+        type: tokTypes.eof,
+        value: undefined,
+        start: 18,
+        end: 18
+      }
+    ]
+  }
+);
 
-test('<!--a', {
-  type: 'Program',
-  body: []
-}, {
-  onComment: [{
-    type: 'Line',
-    value: 'a'
-  }]
-});
+test(
+  '<!--a',
+  {
+    type: 'Program',
+    body: []
+  },
+  {
+    onComment: [
+      {
+        type: 'Line',
+        value: 'a'
+      }
+    ]
+  }
+);
 
 for (var ns in fbTestFixture) {
   ns = fbTestFixture[ns];
   for (var code in ns) {
-    test(code, {
-      type: 'Program',
-      body: [ns[code]]
-    }, {
-      ecmaVersion: 6,
-      locations: true,
-      ranges: true
-    });
+    test(
+      code,
+      {
+        type: 'Program',
+        body: [ns[code]]
+      },
+      {
+        ecmaVersion: 6,
+        locations: true,
+        ranges: true
+      }
+    );
   }
 }

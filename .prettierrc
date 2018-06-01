@@ -1,0 +1,31 @@
+{
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "printWidth": 80,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": [
+        ".prettierrc",
+        ".eslintrc",
+        ".babelrc",
+        ".tern-project",
+        ".stylelintrc",
+        ".lighthouserc"
+      ],
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["package.json"],
+      "options": {
+        "printWidth": 180
+      }
+    }
+  ]
+}
