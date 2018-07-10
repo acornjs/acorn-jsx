@@ -22,7 +22,7 @@
     "acorn": "^5.0.3"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
+    "chai": "^4.0.1",
     "mocha": "^3.3.0"
   }
 }
