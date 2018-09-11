@@ -1,13 +1,13 @@
 var tests = [];
 
-exports.test = function(code, ast, options) {
-  tests.push({code: code, ast: ast, options: options});
+exports.test = function(code, ast, options, pluginOptions) {
+  tests.push({code, ast, options, pluginOptions});
 };
-exports.testFail = function(code, message, options) {
-  tests.push({code: code, error: message, options: options});
+exports.testFail = function(code, message, options, pluginOptions) {
+  tests.push({code, error: message, options, pluginOptions});
 };
 exports.testAssert = function(code, assert, options) {
-  tests.push({code: code, assert: assert, options: options});
+  tests.push({code, assert, options});
 };
 
 exports.runTests = function(config, callback) {
@@ -25,8 +25,7 @@ exports.runTests = function(config, callback) {
       if (expected.onToken = testOpts.onToken) {
         testOpts.onToken = [];
       }
-      testOpts.plugins = testOpts.plugins || { jsx: true };
-      var ast = parse(test.code, testOpts);
+      var ast = parse(test.code, testOpts, test.pluginOptions);
       if (test.error) {
         if (config.loose) {
           callback("ok", test.code);
