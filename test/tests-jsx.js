@@ -3806,7 +3806,8 @@ var fbTestFixture = {
 if (typeof exports !== "undefined") {
   var test = require("./driver.js").test;
   var testFail = require("./driver.js").testFail;
-  var tokTypes = require("../").tokTypes;
+  var jsxTokens = require("..").tokTypes;
+  var acornTokens = require("acorn").tokTypes;
 }
 
 testFail("var x = <div>one</div><div>two</div>;", "Adjacent JSX elements must be wrapped in an enclosing tag (1:22)");
@@ -3856,82 +3857,77 @@ test("<a:b.c />", {
     }
   }]
 }, {
-  ranges: true,
-  plugins: {
-    jsx: { allowNamespacedObjects: true }
-  }
+  ranges: true
+}, {
+  allowNamespacedObjects: true
 });
 
-testFail('<ns:div />', 'Unexpected token (1:3)', {
-  plugins: {
-    jsx: { allowNamespaces: false }
-  }
+testFail('<ns:div />', 'Unexpected token (1:3)', {}, {
+  allowNamespaces: false
 });
 
-testFail('<div ns:attr />', 'Unexpected token (1:7)', {
-  plugins: {
-    jsx: { allowNamespaces: false }
-  }
+testFail('<div ns:attr />', 'Unexpected token (1:7)', {}, {
+  allowNamespaces: false
 });
 
 test('<a>{/* foo */}</a>', {}, {
   onToken: [
     {
-      type: tokTypes.jsxTagStart,
+      type: jsxTokens.jsxTagStart,
       value: undefined,
       start: 0,
       end: 1
     },
     {
-      type: tokTypes.jsxName,
+      type: jsxTokens.jsxName,
       value: 'a',
       start: 1,
       end: 2
     },
     {
-      type: tokTypes.jsxTagEnd,
+      type: jsxTokens.jsxTagEnd,
       value: undefined,
       start: 2,
       end: 3
     },
     {
-      type: tokTypes.braceL,
+      type: acornTokens.braceL,
       value: undefined,
       start: 3,
       end: 4
     },
     {
-      type: tokTypes.braceR,
+      type: acornTokens.braceR,
       value: undefined,
       start: 13,
       end: 14
     },
     {
-      type: tokTypes.jsxTagStart,
+      type: jsxTokens.jsxTagStart,
       value: undefined,
       start: 14,
       end: 15
     },
     {
-      type: tokTypes.slash,
+      type: acornTokens.slash,
       value: '/',
       start: 15,
       end: 16
     },
     {
-      type: tokTypes.jsxName,
+      type: jsxTokens.jsxName,
       value: 'a',
       start: 16,
       end: 17
     },
     {
-      type: tokTypes.jsxTagEnd,
+      type: jsxTokens.jsxTagEnd,
       value: undefined,
       start: 17,
       end: 18
     },
     {
-      type: tokTypes.eof,
+      type: acornTokens.eof,
       value: undefined,
       start: 18,
       end: 18
