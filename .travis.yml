@@ -9,5 +9,5 @@ env:
   - ACORN_VERSION=6
   - ACORN_VERSION=7
 
-before_script:
-  - 'if [ $ACORN_VERSION != 7 ]; then npm install -D acorn@$ACORN_VERSION; fi'
+install:
+  - npm install -D acorn@$ACORN_VERSION
