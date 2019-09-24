@@ -1,5 +1,6 @@
 var driver = require("./driver.js");
 require("./tests-jsx.js");
+require("./tests-misc.js");
 
 function group(name) {
   if (typeof console === "object" && console.group) {
