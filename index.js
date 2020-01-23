@@ -414,9 +414,14 @@ function plugin(options, Parser) {
 
     // Parse JSX text
 
-    jsx_parseText(value) {
-      let node = this.parseLiteral(value);
+    jsx_parseText() {
+      let node = this.parseLiteral(this.value);
       node.type = "JSXText";
+      for (let i = 0; i < node.value.length; i++) {
+        const char = node.value[i];
+        if (char === "}" || char === ">")
+          this.raise(node.start + i, "Unexpected token. Did you mean {\"" + char + "\"} instead?");
+      }
       return node;
     }
 
@@ -430,7 +435,7 @@ function plugin(options, Parser) {
 
     parseExprAtom(refShortHandDefaultPos) {
       if (this.type === tok.jsxText)
-        return this.jsx_parseText(this.value);
+        return this.jsx_parseText();
       else if (this.type === tok.jsxTagStart)
         return this.jsx_parseElement();
       else
