@@ -140,11 +140,8 @@ function plugin(options, Parser) {
         case 125: // '}'
           this.raise(
             this.pos,
-            `Unexpected token \`${
-              this.input[this.pos]
-            }\`. Did you mean \`${ch === 125 ? "&rbrace;" : "&gt;"}\`, or \`{"${
-              this.input[this.pos]
-            }"}\`?`,
+            "Unexpected token `" + this.input[this.pos] + "`. Did you mean `" +
+              (ch === 62 ? "&gt;" : "&rbrace;") + "` or " + "`{\"" + this.input[this.pos] + "\"}" + "`?"
           );
 
         default:
