@@ -136,6 +136,17 @@ function plugin(options, Parser) {
           chunkStart = this.pos;
           break;
 
+        case 62: // '>'
+        case 125: // '}'
+          this.raise(
+            this.pos,
+            `Unexpected token \`${
+              this.input[this.pos]
+            }\`. Did you mean \`${ch === 125 ? "&rbrace;" : "&gt;"}\`, or \`{"${
+              this.input[this.pos]
+            }"}\`?`,
+          );
+
         default:
           if (isNewLine(ch)) {
             out += this.input.slice(chunkStart, this.pos);
@@ -417,11 +428,6 @@ function plugin(options, Parser) {
     jsx_parseText() {
       let node = this.parseLiteral(this.value);
       node.type = "JSXText";
-      for (let i = 0; i < node.value.length; i++) {
-        const char = node.value[i];
-        if (char === "}" || char === ">")
-          this.raise(node.start + i, "Unexpected token. Did you mean {\"" + char + "\"} instead?");
-      }
       return node;
     }
 

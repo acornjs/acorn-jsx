@@ -3959,11 +3959,11 @@ for (var ns in fbTestFixture) {
   }
 }
 
-testFail("<LeftRight left=<a /> right=<b>monkeys /> gorillas</b> />", 'Unexpected token. Did you mean {">"} instead? (1:40)')
+testFail("<LeftRight left=<a /> right=<b>monkeys /> gorillas</b> />", 'Unexpected token `>`. Did you mean `&gt;`, or `{">"}`? (1:40)')
 testFail("<A>foo{</A>", "Unexpected token (1:8)")
 testFail("<A>foo<</A>", "Unexpected token (1:7)")
-testFail("<A>foo}</A>", 'Unexpected token. Did you mean {"}"} instead? (1:6)')
-testFail("<A>foo></A>", 'Unexpected token. Did you mean {">"} instead? (1:6)')
+testFail("<A>foo}</A>", 'Unexpected token `}`. Did you mean `&rbrace;`, or `{"}"}`? (1:6)')
+testFail("<A>foo></A>", 'Unexpected token `>`. Did you mean `&gt;`, or `{">"}`? (1:6)')
 test('<A>foo{"{"}</A>', {
   "type": "Program",
   "start": 0,
