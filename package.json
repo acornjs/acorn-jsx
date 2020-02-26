@@ -2,7 +2,7 @@
   "name": "acorn-jsx",
   "description": "Modern, fast React.js JSX parser",
   "homepage": "https://github.com/acornjs/acorn-jsx",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "maintainers": [
     {
       "name": "Ingvar Stepanyan",
