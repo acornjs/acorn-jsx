@@ -328,7 +328,7 @@ function getQualifiedJSXName(object) {
     getQualifiedJSXName(object.property);
 }
 
-var acornJsx = function(options) {
+function acornJsx(options) {
   options = options || {};
   return function(Parser) {
     return plugin({
@@ -336,8 +336,7 @@ var acornJsx = function(options) {
       allowNamespacedObjects: !!options.allowNamespacedObjects
     }, Parser);
   };
-};
-
+}
 // This is `tokTypes` of the peer dep.
 // This can be different instances from the actual `tokTypes` this plugin uses.
 Object.defineProperty(acornJsx, "tokTypes", {
@@ -347,9 +346,6 @@ Object.defineProperty(acornJsx, "tokTypes", {
   configurable: true,
   enumerable: true
 });
-
-// let tokTypes = acornJsx.tokTypes;
-// export { tokTypes };
 
 function plugin(options, Parser) {
   const acorn = Parser.acorn || acorn;

@@ -20,7 +20,6 @@ function log(title, message) {
   if (typeof console === "object") console.log(title, message);
 }
 
-// const acorn = require("acorn"), jsx = require("..")
 const Parser = acorn.Parser.extend(jsx())
 
 var stats, modes = {

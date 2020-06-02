@@ -3732,13 +3732,6 @@ var fbTestFixture = {
   }
 };
 
-// if (typeof exports !== "undefined") {
-//   var test = require("./driver.js").test;
-//   var testFail = require("./driver.js").testFail;
-//   var jsxTokens = require("..").tokTypes;
-//   var acornTokens = require("acorn").tokTypes;
-// }
-
 testFail("var x = <div>one</div><div>two</div>;", "Adjacent JSX elements must be wrapped in an enclosing tag (1:22)");
 
 testFail("<a:b.c />", "Unexpected token (1:4)");

@@ -71,7 +71,7 @@ function getQualifiedJSXName(object) {
     getQualifiedJSXName(object.property);
 }
 
-var acornJsx = function(options) {
+function acornJsx(options) {
   options = options || {};
   return function(Parser) {
     return plugin({
@@ -93,11 +93,6 @@ Object.defineProperty(acornJsx, "tokTypes", {
 
 
 export default acornJsx;
-
-// If use this, rollup will bundle as `exports.default` and `exports.tokTypes`. That make the CommonJS users have to change their require code like `require("acorn-jsx").default`.
-
-// let tokTypes = acornJsx.tokTypes;
-// export { tokTypes };
 
 function plugin(options, Parser) {
   const acorn = Parser.acorn || acorn;
