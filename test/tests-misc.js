@@ -41,7 +41,7 @@ testAssert("// 'acornJsx.tokTypes' should be used.", function() {
   ]
   const actualTokens = []
 
-  JsxParser.parse(code, {onToken: actualTokens})
+  JsxParser.parse(code, {ecmaVersion: 11, onToken: actualTokens})
 
   assert.strictEqual(actualTokens.length, expectedTokTypes.length);
   for (let i = 0; i < actualTokens.length; ++i) {

@@ -17,7 +17,7 @@ exports.runTests = function(config, callback) {
     var test = tests[i];
     if (config.filter && !config.filter(test)) continue;
     try {
-      var testOpts = test.options || {locations: true};
+      var testOpts = Object.assign({ecmaVersion: 11}, test.options || {locations: true});
       var expected = {};
       if (expected.onComment = testOpts.onComment) {
         testOpts.onComment = []
