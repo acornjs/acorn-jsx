@@ -2,7 +2,7 @@
   "name": "acorn-jsx",
   "description": "Modern, fast React.js JSX parser",
   "homepage": "https://github.com/acornjs/acorn-jsx",
-  "version": "5.2.0",
+  "version": "5.3.1",
   "main": "index.cjs.js",
   "module": "index.js",
   "maintainers": [
@@ -22,11 +22,11 @@
     "prepublishOnly": "node -r esm constructor/build.js"
   },
   "peerDependencies": {
-    "acorn": "^6.0.0 || ^7.0.0"
+    "acorn": "^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^12.0.0",
-    "acorn": "^7.0.0",
+    "acorn": "^8.0.1",
     "esm": "^3.2.25",
     "rollup": "^2.12.0"
   }

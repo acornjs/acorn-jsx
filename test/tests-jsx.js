@@ -4634,3 +4634,74 @@ test('<A>foo&gt;</A>', {
     }
   ]
 });
+test('function*it(){yield <a></a>}', {
+  "type": "Program",
+  "start": 0,
+  "end": 28,
+  "body": [
+    {
+      "type": "FunctionDeclaration",
+      "start": 0,
+      "end": 28,
+      "id": {
+        "type": "Identifier",
+        "start": 9,
+        "end": 11,
+        "name": "it"
+      },
+      "expression": false,
+      "generator": true,
+      "async": false,
+      "params": [],
+      "body": {
+        "type": "BlockStatement",
+        "start": 13,
+        "end": 28,
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "start": 14,
+            "end": 27,
+            "expression": {
+              "type": "YieldExpression",
+              "start": 14,
+              "end": 27,
+              "delegate": false,
+              "argument": {
+                "type": "JSXElement",
+                "start": 20,
+                "end": 27,
+                "openingElement": {
+                  "type": "JSXOpeningElement",
+                  "start": 20,
+                  "end": 23,
+                  "attributes": [],
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "start": 21,
+                    "end": 22,
+                    "name": "a"
+                  },
+                  "selfClosing": false
+                },
+                "closingElement": {
+                  "type": "JSXClosingElement",
+                  "start": 23,
+                  "end": 27,
+                  "name": {
+                    "type": "JSXIdentifier",
+                    "start": 25,
+                    "end": 26,
+                    "name": "a"
+                  }
+                },
+                "children": []
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "sourceType": "script"
+});
