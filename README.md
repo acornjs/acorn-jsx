@@ -35,6 +35,12 @@ acorn.Parser.extend(jsx({ allowNamespaces: false }))
 
 Note that by default `allowNamespaces` is enabled for spec compliancy.
 
+By default, HTML entities are parsed and transformed within strings. To disable this functionality (and treat HTML entities as plain text), you can provide `transformEntities: false` as an option:
+
+```javascript
+acorn.Parser.extend(jsx({ transformEntities: false }))
+```
+
 ## License
 
 This plugin is issued under the [MIT license](./LICENSE).
