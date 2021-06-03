@@ -1,11 +1,9 @@
 "use strict";
 
-if (typeof exports !== "undefined") {
-  var assert = require("assert");
-  var acorn = require("acorn");
-  var jsx = require("..");
-  var testAssert = require("./driver.js").testAssert;
-}
+import assert from "assert";
+import * as acorn from "acorn";
+import jsx from "../index.js";
+import { testAssert } from "./driver";
 
 testAssert("// the enhanced Parser instance should have a static property 'acornJsx'.", function() {
   const JsxParser = acorn.Parser.extend(jsx());

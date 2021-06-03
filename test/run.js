@@ -1,6 +1,8 @@
-var driver = require("./driver.js");
-require("./tests-jsx.js");
-require("./tests-misc.js");
+import * as driver from "./driver.js";
+import "./tests-jsx.js";
+import "./tests-misc.js";
+import * as acorn from "acorn";
+import jsx from "../index.js";
 
 function group(name) {
   if (typeof console === "object" && console.group) {
@@ -18,7 +20,6 @@ function log(title, message) {
   if (typeof console === "object") console.log(title, message);
 }
 
-const acorn = require("acorn"), jsx = require("..")
 const Parser = acorn.Parser.extend(jsx())
 
 var stats, modes = {

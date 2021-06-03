@@ -1,16 +1,16 @@
 var tests = [];
 
-exports.test = function(code, ast, options, pluginOptions) {
+export function test(code, ast, options, pluginOptions) {
   tests.push({code, ast, options, pluginOptions});
 };
-exports.testFail = function(code, message, options, pluginOptions) {
+export function testFail(code, message, options, pluginOptions) {
   tests.push({code, error: message, options, pluginOptions});
 };
-exports.testAssert = function(code, assert, options) {
+export function testAssert(code, assert, options) {
   tests.push({code, assert, options});
 };
 
-exports.runTests = function(config, callback) {
+export function runTests(config, callback) {
   var parse = config.parse;
 
   for (var i = 0; i < tests.length; ++i) {

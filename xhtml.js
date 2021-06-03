@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   quot: '\u0022',
   amp: '&',
   apos: '\u0027',

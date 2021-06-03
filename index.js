@@ -1,6 +1,7 @@
 'use strict';
 
-const XHTMLEntities = require('./xhtml');
+import * as acorn from "acorn";
+import XHTMLEntities from './xhtml';
 
 const hexNumber = /^[\da-fA-F]+$/;
 const decimalNumber = /^\d+$/;
@@ -70,7 +71,7 @@ function getQualifiedJSXName(object) {
     getQualifiedJSXName(object.property);
 }
 
-module.exports = function(options) {
+function acornJsx(options) {
   options = options || {};
   return function(Parser) {
     return plugin({
@@ -82,16 +83,19 @@ module.exports = function(options) {
 
 // This is `tokTypes` of the peer dep.
 // This can be different instances from the actual `tokTypes` this plugin uses.
-Object.defineProperty(module.exports, "tokTypes", {
+Object.defineProperty(acornJsx, "tokTypes", {
   get: function get_tokTypes() {
-    return getJsxTokens(require("acorn")).tokTypes;
+    return getJsxTokens(acorn).tokTypes;
   },
   configurable: true,
   enumerable: true
 });
 
+
+export default acornJsx;
+
 function plugin(options, Parser) {
-  const acorn = Parser.acorn || require("acorn");
+  const acorn = Parser.acorn || acorn;
   const acornJsx = getJsxTokens(acorn);
   const tt = acorn.tokTypes;
   const tok = acornJsx.tokTypes;

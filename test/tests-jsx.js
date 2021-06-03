@@ -20,6 +20,13 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+import { test } from "./driver.js";
+import { testFail } from "./driver.js";
+import acornJsx from "../index.js";
+import { tokTypes as acornTokens } from "acorn";
+
+let jsxTokens = acornJsx.tokTypes;
+
 var fbTestFixture = {
   // Taken and adapted from esprima-fb/fbtest.js.
   'JSX': {
@@ -3724,13 +3731,6 @@ var fbTestFixture = {
     }
   }
 };
-
-if (typeof exports !== "undefined") {
-  var test = require("./driver.js").test;
-  var testFail = require("./driver.js").testFail;
-  var jsxTokens = require("..").tokTypes;
-  var acornTokens = require("acorn").tokTypes;
-}
 
 testFail("var x = <div>one</div><div>two</div>;", "Adjacent JSX elements must be wrapped in an enclosing tag (1:22)");
 
