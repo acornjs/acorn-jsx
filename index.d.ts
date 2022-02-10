@@ -1,12 +1,26 @@
-import { Parser } from 'acorn' 
+import acorn from 'acorn';
 
-declare const jsx: (options?: jsx.Options) => (BaseParser: typeof Parser) => typeof Parser;
+export const jsx: (options?: jsx.Options) => (BaseParser: typeof acorn.Parser) => typeof acorn.Parser;
 
-declare namespace jsx {
-  interface Options {
-    allowNamespacedObjects?: boolean;
-    allowNamespaces?: boolean;
-  }
+export interface Options {
+  allowNamespacedObjects?: boolean;
+  allowNamespaces?: boolean;
 }
 
-export = jsx;
+export const tokTypes: {
+    jsxName: acorn.TokenType,
+    jsxText: acorn.TokenType,
+    jsxTagEnd: acorn.TokenType,
+    jsxTagStart: acorn.TokenType
+} & typeof acorn.tokTypes;
+
+export class AcornJsxParser extends acorn.Parser {
+  static readonly acornJsx: {
+    tokTypes: typeof tokTypes
+  };
+
+  jsx_readString(quote: number): void;
+}
+
+export as namespace jsx;
+export default jsx;
