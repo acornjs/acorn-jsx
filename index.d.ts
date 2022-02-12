@@ -8,15 +8,22 @@ export interface Options {
 }
 
 export const tokTypes: {
-    jsxName: acorn.TokenType,
-    jsxText: acorn.TokenType,
-    jsxTagEnd: acorn.TokenType,
-    jsxTagStart: acorn.TokenType
+  jsxName: acorn.TokenType,
+  jsxText: acorn.TokenType,
+  jsxTagEnd: acorn.TokenType,
+  jsxTagStart: acorn.TokenType
 } & typeof acorn.tokTypes;
+
+export const tokContexts: {
+  tc_oTag: acorn.TokContext,
+  tc_cTag: acorn.TokContext,
+  tc_expr: acorn.TokContext
+};
 
 export class AcornJsxParser extends acorn.Parser {
   static readonly acornJsx: {
-    tokTypes: typeof tokTypes
+    tokTypes: typeof tokTypes;
+    tokContexts: typeof tokContexts
   };
 
   jsx_readString(quote: number): void;
