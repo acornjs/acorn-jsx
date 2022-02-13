@@ -26,14 +26,6 @@ export class AcornJsxParser extends acorn.Parser {
     tokContexts: typeof tokContexts
   };
 
-  pos: number;
-  start: number;
-  input: string;
-  lineStart: number;
-  type: acorn.TokenType;
-  exprAllowed: boolean;
-  context: acorn.TokContext[];
-
   jsx_readToken(): string;
   jsx_readNewLine(normalizeCRLF: boolean): void;
   jsx_readString(quote: number): void;
