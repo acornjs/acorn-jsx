@@ -1,4 +1,4 @@
-import acorn from 'acorn';
+import * as acorn from 'acorn';
 
 export const jsx: (options?: jsx.Options) => (BaseParser: typeof acorn.Parser) => typeof AcornJsxParser
 
