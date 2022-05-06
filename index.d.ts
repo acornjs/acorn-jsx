@@ -14,7 +14,7 @@ export const tokTypes: {
   jsxTagStart: acorn.TokenType
 } & typeof acorn.tokTypes;
 
-export const tokContexts: {
+export type TokContexts = {
   tc_oTag: acorn.TokContext,
   tc_cTag: acorn.TokContext,
   tc_expr: acorn.TokContext
@@ -23,7 +23,7 @@ export const tokContexts: {
 export class AcornJsxParser extends acorn.Parser {
   static readonly acornJsx: {
     tokTypes: typeof tokTypes;
-    tokContexts: typeof tokContexts
+    tokContexts: TokContexts
   };
 
   jsx_readToken(): string;
