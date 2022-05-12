@@ -1,6 +1,6 @@
 import * as acorn from 'acorn';
 
-declare function jsx(options?: jsx.Options): (BaseParser: typeof acorn.Parser) => AcornJsxParser;
+declare function jsx(options?: Options): (BaseParser: typeof acorn.Parser) => AcornJsxParser;
 
 export interface Options {
   allowNamespacedObjects?: boolean;
