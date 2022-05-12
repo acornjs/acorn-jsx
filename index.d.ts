@@ -59,5 +59,4 @@ export interface IAcornJsxParser extends acorn.Parser {
   jsx_parseElement(): acorn.Node;
 }
 
-export as namespace jsx;
 export default jsx;
