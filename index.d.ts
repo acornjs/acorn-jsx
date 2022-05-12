@@ -1,18 +1,23 @@
 import * as acorn from 'acorn';
 
-declare function jsx(options?: Options): (BaseParser: typeof acorn.Parser) => AcornJsxParser;
+type tokTypes = typeof acorn.tokTypes;
 
 export interface Options {
   allowNamespacedObjects?: boolean;
   allowNamespaces?: boolean;
 }
 
-export const tokTypes: {
+export interface TokTypes extends tokTypes {
   jsxName: acorn.TokenType,
   jsxText: acorn.TokenType,
   jsxTagEnd: acorn.TokenType,
   jsxTagStart: acorn.TokenType
-} & typeof acorn.tokTypes;
+}
+
+declare const jsx: {
+  tokTypes: TokTypes;
+  (options?: acorn.Options): (BaseParser: typeof acorn.Parser) => AcornJsxParser
+}
 
 export type TokContexts = {
   tc_oTag: acorn.TokContext,
@@ -27,7 +32,7 @@ type P = typeof acorn.Parser;
 //   `IAcornJsxParser` here)
 export interface AcornJsxParser extends Pick<P, keyof P> {
   readonly acornJsx: {
-    tokTypes: typeof tokTypes;
+    tokTypes: TokTypes;
     tokContexts: TokContexts
   };
 
