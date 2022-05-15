@@ -1,6 +1,6 @@
 import * as acorn from 'acorn';
 
-interface TokTypes extends AcornTokTypes {
+interface JsxTokTypes extends AcornTokTypes {
   jsxName: acorn.TokenType,
   jsxText: acorn.TokenType,
   jsxTagEnd: acorn.TokenType,
@@ -8,7 +8,7 @@ interface TokTypes extends AcornTokTypes {
 }
 
 declare const jsx: {
-  tokTypes: TokTypes;
+  tokTypes: JsxTokTypes;
   (options?: jsx.Options): (BaseParser: typeof acorn.Parser) => jsx.AcornJsxParserCtor
 }
 
@@ -16,12 +16,7 @@ type AcornTokTypes = typeof acorn.tokTypes;
 
 declare namespace jsx {
 
-  interface TokTypes extends AcornTokTypes {
-    jsxName: acorn.TokenType,
-    jsxText: acorn.TokenType,
-    jsxTagEnd: acorn.TokenType,
-    jsxTagStart: acorn.TokenType
-  }
+  type TokTypes = JsxTokTypes
 
   interface Options {
     allowNamespacedObjects?: boolean;
