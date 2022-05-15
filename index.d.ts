@@ -5,11 +5,11 @@ declare const jsx: {
   (options?: jsx.Options): (BaseParser: typeof acorn.Parser) => jsx.AcornJsxParserCtor
 }
 
+type AcornTokTypes = typeof acorn.tokTypes;
+
 declare namespace jsx {
 
-  type tokTypes = typeof acorn.tokTypes;
-
-  interface TokTypes extends tokTypes {
+  interface TokTypes extends AcornTokTypes {
     jsxName: acorn.TokenType,
     jsxText: acorn.TokenType,
     jsxTagEnd: acorn.TokenType,
