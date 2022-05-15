@@ -27,12 +27,10 @@ declare namespace jsx {
     tc_expr: acorn.TokContext
   }
 
-  type P = typeof acorn.Parser;
-
   // We pick (statics) from acorn rather than plain extending to avoid complaint
   //   about base constructors needing the same return type (i.e., we return
   //   `AcornJsxParser` here)
-  interface AcornJsxParserCtor extends Pick<P, keyof P> {
+  interface AcornJsxParserCtor extends Pick<typeof acorn.Parser, keyof typeof acorn.Parser> {
     readonly acornJsx: {
       tokTypes: TokTypes;
       tokContexts: TokContexts
