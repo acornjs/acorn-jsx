@@ -1,7 +1,14 @@
 import * as acorn from 'acorn';
 
+interface TokTypes extends AcornTokTypes {
+  jsxName: acorn.TokenType,
+  jsxText: acorn.TokenType,
+  jsxTagEnd: acorn.TokenType,
+  jsxTagStart: acorn.TokenType
+}
+
 declare const jsx: {
-  tokTypes: typeof acorn.tokTypes;
+  tokTypes: TokTypes;
   (options?: jsx.Options): (BaseParser: typeof acorn.Parser) => jsx.AcornJsxParserCtor
 }
 
