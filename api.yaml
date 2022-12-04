@@ -1,0 +1,4 @@
+# git clone
+# https://github.com/acornjs/acorn.git
+cd acorn
+npm install
