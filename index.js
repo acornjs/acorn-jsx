@@ -75,7 +75,8 @@ module.exports = function(options) {
   return function(Parser) {
     return plugin({
       allowNamespaces: options.allowNamespaces !== false,
-      allowNamespacedObjects: !!options.allowNamespacedObjects
+      allowNamespacedObjects: !!options.allowNamespacedObjects,
+      transformEntities: options.transformEntities !== false
     }, Parser);
   };
 };
@@ -130,12 +131,6 @@ function plugin(options, Parser) {
           out += this.input.slice(chunkStart, this.pos);
           return this.finishToken(tok.jsxText, out);
 
-        case 38: // '&'
-          out += this.input.slice(chunkStart, this.pos);
-          out += this.jsx_readEntity();
-          chunkStart = this.pos;
-          break;
-
         case 62: // '>'
         case 125: // '}'
           this.raise(
@@ -143,6 +138,15 @@ function plugin(options, Parser) {
             "Unexpected token `" + this.input[this.pos] + "`. Did you mean `" +
               (ch === 62 ? "&gt;" : "&rbrace;") + "` or " + "`{\"" + this.input[this.pos] + "\"}" + "`?"
           );
+
+        case 38: // '&' (NOTE: must come directly BEFORE default case)
+          if (options.transformEntities) {
+            out += this.input.slice(chunkStart, this.pos);
+            out += this.jsx_readEntity();
+            chunkStart = this.pos;
+            break;
+          }
+          /* intentional fallthrough */
 
         default:
           if (isNewLine(ch)) {

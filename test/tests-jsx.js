@@ -4634,6 +4634,59 @@ test('<A>foo&gt;</A>', {
     }
   ]
 });
+test('<A>foo&gt;</A>', {
+  "type": "Program",
+  "start": 0,
+  "end": 14,
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "start": 0,
+      "end": 14,
+      "expression": {
+        "type": "JSXElement",
+        "start": 0,
+        "end": 14,
+        "openingElement": {
+          "type": "JSXOpeningElement",
+          "start": 0,
+          "end": 3,
+          "attributes": [],
+          "name": {
+            "type": "JSXIdentifier",
+            "start": 1,
+            "end": 2,
+            "name": "A"
+          },
+          "selfClosing": false
+        },
+        "closingElement": {
+          "type": "JSXClosingElement",
+          "start": 10,
+          "end": 14,
+          "name": {
+            "type": "JSXIdentifier",
+            "start": 12,
+            "end": 13,
+            "name": "A"
+          }
+        },
+        "children": [
+          {
+            "type": "JSXText",
+            "start": 3,
+            "end": 10,
+            "value": "foo&gt;",
+            "raw": "foo&gt;"
+          }
+        ]
+      }
+    }
+  ]
+}, {
+}, {
+  transformEntities: false
+});
 test('function*it(){yield <a></a>}', {
   "type": "Program",
   "start": 0,
